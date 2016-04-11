@@ -32,7 +32,7 @@ public class Razz extends AppCompatActivity {
         staff = (RatingBar) findViewById(R.id.staffRatingBar);
         rate = (Button) findViewById(R.id.rateButton);
 
-        toy = new Restaurant("Example of Title thingy", "aurora", "Colorado", "yay");
+        toy = new Restaurant("Olive Garden", "aurora", "Colorado", "yay");
 
         name.setText(toy.getName());
 
