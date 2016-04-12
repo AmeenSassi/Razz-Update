@@ -15,16 +15,11 @@ public class Restaurant {
     private RatingBar Flavour;
     private RatingBar Staff;
 
-
-    Restaurant(){
-
-    };
-
-    Restaurant(String n, String c, String s, String d){
-        name = n;
-        city = c;
-        state = s;
-        description = d;
+    public Restaurant(String name, String city, String state, String description) {
+        this.name = name;
+        this.city = city;
+        this.state = state;
+        this.description = description;
     }
 
     public void setName(String n){
