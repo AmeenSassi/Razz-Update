@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -13,127 +14,90 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Restaurant:"
-        android:id="@+id/Rating_Screen_Title"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/Restaurant_Name"
-        android:layout_marginTop="16dp"
-        android:layout_below="@+id/Rating_Screen_Title"
-        android:layout_alignLeft="@+id/Rating_Screen_Title"
-        android:layout_alignStart="@+id/Rating_Screen_Title" />
+        android:layout_gravity="center_horizontal" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Cleanliness:"
-        android:id="@+id/cleanRating"
-        android:layout_marginTop="47dp"
-        android:layout_below="@+id/Restaurant_Name"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/textView0"
+        android:layout_gravity="center_horizontal" />
 
     <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/cleanRatingBar"
-        android:layout_below="@+id/Restaurant_Name"
-        android:layout_alignLeft="@+id/Restaurant_Name"
-        android:layout_alignStart="@+id/Restaurant_Name"
-        android:layout_marginTop="31dp"
+        android:layout_gravity="center_horizontal"
         android:numStars="5"
         android:rating="0"
-        android:stepSize="1" />
+        android:stepSize="0" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Ambience:"
-        android:id="@+id/ambRating"
-        android:layout_marginTop="13dp"
-        android:layout_alignTop="@+id/ambRatingBar"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Ambiance:"
+        android:id="@+id/textView1"
+        android:layout_gravity="center_horizontal" />
 
     <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ambRatingBar"
-        android:layout_below="@+id/cleanRatingBar"
-        android:layout_alignLeft="@+id/cleanRatingBar"
-        android:layout_alignStart="@+id/cleanRatingBar"
+        android:layout_gravity="center_horizontal"
         android:numStars="5"
         android:rating="0"
-        android:stepSize="1" />
+        android:stepSize="0" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Fanciness:"
-        android:id="@+id/fancyRating"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/textView2"
+        android:layout_gravity="center_horizontal" />
 
     <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/fancyRatingBar"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/Restaurant_Name"
-        android:layout_toEndOf="@+id/Restaurant_Name"
+        android:layout_gravity="center_horizontal"
         android:numStars="5"
         android:rating="0"
-        android:stepSize="1" />
+        android:stepSize="0" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Flavour:"
-        android:id="@+id/flavourRating"
-        android:layout_marginTop="14dp"
-        android:layout_alignTop="@+id/flavourRatingBar"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/textView3"
+        android:layout_gravity="center_horizontal" />
 
     <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/flavourRatingBar"
-        android:layout_below="@+id/fancyRatingBar"
-        android:layout_alignLeft="@+id/fancyRatingBar"
-        android:layout_alignStart="@+id/fancyRatingBar"
+        android:layout_gravity="center_horizontal"
         android:numStars="5"
         android:rating="0"
-        android:stepSize="1" />
+        android:stepSize="0" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Staff:"
-        android:id="@+id/staffRating"
-        android:layout_marginTop="15dp"
-        android:layout_alignTop="@+id/staffRatingBar"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/textView4" />
 
     <RatingBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/staffRatingBar"
-        android:layout_below="@+id/flavourRatingBar"
-        android:layout_toRightOf="@+id/cleanRating"
-        android:layout_toEndOf="@+id/cleanRating"
+        android:layout_gravity="center_horizontal"
         android:numStars="5"
         android:rating="0"
         android:stepSize="1" />
@@ -143,8 +107,6 @@
         android:layout_height="wrap_content"
         android:text="RATE"
         android:id="@+id/rateButton"
-        android:layout_below="@+id/staffRatingBar"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp" />
+        android:layout_gravity="center_horizontal" />
 
-</RelativeLayout>
+</LinearLayout>

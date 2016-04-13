@@ -10,14 +10,15 @@ import android.view.View;
 public class Razz extends AppCompatActivity {
 
     private TextView name;
-    private RatingBar clean;
-    private RatingBar amb;
-    private RatingBar fancy;
+    private RatingBar cleanliness;
+    private RatingBar ambiance;
+    private RatingBar fanciness;
     private RatingBar flvr;
     private RatingBar staff;
     private Button rate;
 
     public Restaurant toy;
+    public RatingList list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,9 +26,9 @@ public class Razz extends AppCompatActivity {
         setContentView(R.layout.activity_razz);
 
         name = (TextView) findViewById(R.id.Restaurant_Name);
-        clean = (RatingBar) findViewById(R.id.cleanRatingBar);
-        amb =  (RatingBar) findViewById(R.id.ambRatingBar);
-        fancy = (RatingBar) findViewById(R.id.fancyRatingBar);
+        cleanliness = (RatingBar) findViewById(R.id.cleanRatingBar);
+        ambiance =  (RatingBar) findViewById(R.id.ambRatingBar);
+        fanciness = (RatingBar) findViewById(R.id.fancyRatingBar);
         flvr = (RatingBar) findViewById(R.id.flavourRatingBar);
         staff = (RatingBar) findViewById(R.id.staffRatingBar);
         rate = (Button) findViewById(R.id.rateButton);
@@ -39,9 +40,13 @@ public class Razz extends AppCompatActivity {
 
     }
 
-    //rate.setOnClickListener(new View.OnClickListener() {
-    //    public void onClick(View v) {
-            
-    //    }
-    //});
+    rate.setOnClickListener(new View.OnClickListener() {
+        public void onClick(View v){
+            toy.setClean(cleanliness.getRating());
+            toy.setAmbiance(ambiance.getRating());
+            toy.setFanciness(fanciness.getRating());
+            toy.setFlavour(flvr.getRating());
+            toy.setStaff(staff.getRating());
+        }
+    });
 }

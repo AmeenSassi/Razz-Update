@@ -9,11 +9,7 @@ public class Restaurant {
     private String city;
     private String state;
     private String description;
-    private RatingBar Clean; // change the name of the rating to our desired name.
-    private RatingBar Ambiance; //
-    private RatingBar Fancy;
-    private RatingBar Flavour;
-    private RatingBar Staff;
+    public RatingList ratingList;
 
 
     Restaurant(){
@@ -25,6 +21,7 @@ public class Restaurant {
         city = c;
         state = s;
         description = d;
+
     }
 
     public void setName(String n){
@@ -59,12 +56,46 @@ public class Restaurant {
         return name;
     }
 
-    public void setStarRating(RatingBar star, float num) {
-        star.setRating(num);
+    public void setClean(float num) {
+        ratingList.setClean(num);
     }
 
-    public float getStarRating(RatingBar star) {
-        return star.getRating();
+    public void setAmbiance(float num) {
+        ratingList.setAmbiance(num);
+    }
+
+    public void setFanciness(float num) {
+        ratingList.setFanciness(num);
+    }
+
+    public void setFlavour(float num) {
+        ratingList.setFlavour(num);
+    }
+
+    public void setStaff(float num) {
+        ratingList.setStaff(num);
+    }
+
+
+
+    public float getClean() {
+        return ratingList.getClean();
+    }
+
+    public float getAmbiance() {
+        return ratingList.getAmbiance();
+    }
+
+    public float getFanciness() {
+        return ratingList.getFanciness();
+    }
+
+    public float getFlavour() {
+        return ratingList.getFlavour();
+    }
+
+    public float getStaff() {
+        return ratingList.getStaff();
     }
 
 }
