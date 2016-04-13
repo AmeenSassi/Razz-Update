@@ -27,7 +27,7 @@ public class Razz extends AppCompatActivity {
 
         name = (TextView) findViewById(R.id.Restaurant_Name);
         cleanliness = (RatingBar) findViewById(R.id.cleanRatingBar);
-        ambiance =  (RatingBar) findViewById(R.id.ambRatingBar);
+        ambiance = (RatingBar) findViewById(R.id.ambRatingBar);
         fanciness = (RatingBar) findViewById(R.id.fancyRatingBar);
         flvr = (RatingBar) findViewById(R.id.flavourRatingBar);
         staff = (RatingBar) findViewById(R.id.staffRatingBar);
@@ -35,18 +35,17 @@ public class Razz extends AppCompatActivity {
 
         toy = new Restaurant("Olive Garden", "aurora", "Colorado", "yay");
 
+
         name.setText(toy.getName());
 
-
+        rate.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                toy.setClean(cleanliness.getRating());
+                toy.setAmbiance(ambiance.getRating());
+                toy.setFanciness(fanciness.getRating());
+                toy.setFlavour(flvr.getRating());
+                toy.setStaff(staff.getRating());
+            }
+        });
     }
-
-    rate.setOnClickListener(new View.OnClickListener() {
-        public void onClick(View v){
-            toy.setClean(cleanliness.getRating());
-            toy.setAmbiance(ambiance.getRating());
-            toy.setFanciness(fanciness.getRating());
-            toy.setFlavour(flvr.getRating());
-            toy.setStaff(staff.getRating());
-        }
-    });
 }

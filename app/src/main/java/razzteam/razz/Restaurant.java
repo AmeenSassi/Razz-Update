@@ -1,6 +1,9 @@
 package razzteam.razz;
 
 import android.widget.RatingBar;
+
+import java.util.ArrayList;
+
 /**
  * Created by Ameen on 4/5/2016.
  */
@@ -9,7 +12,8 @@ public class Restaurant {
     private String city;
     private String state;
     private String description;
-    public RatingList ratingList;
+    private int numOfReviews;
+    private ArrayList<RatingList> ratingList = new ArrayList<RatingList>();
 
 
     Restaurant(){
@@ -21,14 +25,14 @@ public class Restaurant {
         city = c;
         state = s;
         description = d;
-
+        numOfReviews = 0;
     }
 
     public void setName(String n){
         name = n;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
@@ -57,45 +61,50 @@ public class Restaurant {
     }
 
     public void setClean(float num) {
-        ratingList.setClean(num);
+        int i = ratingList.size();
+        ratingList.get(i).setClean(num);
     }
 
     public void setAmbiance(float num) {
-        ratingList.setAmbiance(num);
+        int i = ratingList.size();
+        ratingList.get(i).setAmbiance(num);
     }
 
     public void setFanciness(float num) {
-        ratingList.setFanciness(num);
+        int i = ratingList.size();
+        ratingList.get(i).setFanciness(num);
     }
 
     public void setFlavour(float num) {
-        ratingList.setFlavour(num);
+        int i = ratingList.size();
+        ratingList.get(i).setFlavour(num);
     }
 
     public void setStaff(float num) {
-        ratingList.setStaff(num);
+        int i = ratingList.size();
+        ratingList.get(i).setStaff(num);
     }
 
 
 
-    public float getClean() {
-        return ratingList.getClean();
+    public float getClean(int i) {
+        return ratingList.get(i).getClean();
     }
 
-    public float getAmbiance() {
-        return ratingList.getAmbiance();
+    public float getAmbiance(int i) {
+        return ratingList.get(i).getAmbiance();
     }
 
-    public float getFanciness() {
-        return ratingList.getFanciness();
+    public float getFanciness(int i) {
+        return ratingList.get(i).getFanciness();
     }
 
-    public float getFlavour() {
-        return ratingList.getFlavour();
+    public float getFlavour(int i) {
+        return ratingList.get(i).getFlavour();
     }
 
-    public float getStaff() {
-        return ratingList.getStaff();
+    public float getStaff(int i) {
+        return ratingList.get(i).getStaff();
     }
 
 }
