@@ -20,12 +20,11 @@ public class Restaurant {
 
     };
 
-    Restaurant(String n, String c, String s, String d){
-        name = n;
-        city = c;
-        state = s;
-        description = d;
-        numOfReviews = 0;
+    public Restaurant(String name, String city, String state, String description) {
+        this.name = name;
+        this.city = city;
+        this.state = state;
+        this.description = description;
     }
 
     public void setName(String n){
