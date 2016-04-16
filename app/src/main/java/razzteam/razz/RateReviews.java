@@ -5,7 +5,7 @@ import android.widget.RatingBar;
 /**
  * Created by Ameen on 4/12/2016.
  */
-public class RatingList {
+public class RateReviews {
     private RatingBar Clean; // change the name of the rating to our desired name.
     private RatingBar Ambiance; //
     private RatingBar Fancy;

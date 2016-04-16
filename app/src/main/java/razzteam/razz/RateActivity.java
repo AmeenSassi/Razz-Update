@@ -7,7 +7,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.view.View;
 
-public class Razz extends AppCompatActivity {
+public class RateActivity extends AppCompatActivity {
 
     private TextView name;
     private RatingBar cleanliness;
@@ -18,12 +18,12 @@ public class Razz extends AppCompatActivity {
     private Button rate;
 
     public Restaurant toy;
-    public RatingList list;
+    public RateReviews list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_razz);
+        setContentView(R.layout.activity_rate);
 
         name = (TextView) findViewById(R.id.Restaurant_Name);
         cleanliness = (RatingBar) findViewById(R.id.cleanRatingBar);

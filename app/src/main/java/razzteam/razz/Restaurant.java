@@ -13,7 +13,7 @@ public class Restaurant {
     private String state;
     private String description;
     private int numOfReviews;
-    private ArrayList<RatingList> ratingList = new ArrayList<RatingList>();
+    private ArrayList<RateReviews> ratingList = new ArrayList<RateReviews>();
 
 
     Restaurant(){
