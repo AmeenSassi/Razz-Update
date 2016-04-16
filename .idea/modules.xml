@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/Razz.iml" filepath="$PROJECT_DIR$/Razz.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/Razz-Update.iml" filepath="$PROJECT_DIR$/Razz-Update.iml" />
+>>>>>>> 3f46565dd195d2399b0dc0282a4c00d1410ac724
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

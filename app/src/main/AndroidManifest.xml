@@ -3,11 +3,10 @@
     package="razzteam.razz">
 
     <supports-screens
-            android:smallScreens="true"
-                    android:normalScreens="true"
-                    android:largeScreens="true"
-                    android:anyDensity="true"
-    />
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true" />
 
     <application
         android:allowBackup="true"
@@ -16,13 +15,38 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Razz">
+
+            <!-- I commented this out so that Razz activity wouldn't start first si I could debug view_restaurant -->
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name=".ListActivity" />
+        <activity
+            android:name=".view_restaurant"
+            android:label="@string/title_activity_view_restaurant"
+            android:theme="@style/AppTheme.NoActionBar">
+
+            <!-- This intent-filter is here so I can start my activity first to debug it -->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
+        <activity
+            android:name=".Add_Restaurant"
+            android:label="@string/title_activity_add__restaurant"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListActivity"></activity>
     </application>
 
 </manifest>
