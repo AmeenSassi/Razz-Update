@@ -30,7 +30,7 @@
             android:text="@string/add_rest_page_title"
             android:id="@+id/add_rest_label"
             android:typeface="serif"
-            android:textSize="40dp"
+            android:textSize="36sp"
             android:fontFamily="serif"
             android:textStyle="bold"
             android:textColor="@color/rest_title_color"
@@ -52,8 +52,6 @@
 
 
 
-            android:layout_gravity="center_horizontal"
-
 
         <EditText
             android:layout_width="match_parent"
@@ -61,17 +59,6 @@
             android:id="@+id/editText_rest_type"
 
             android:hint="Restaurant Type"
-            android:padding="18sp"
-            android:focusable="true" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="phone"
-            android:ems="10"
-            android:id="@+id/editText_rest_phone_number"
-
-            android:hint="Restaurant Phone Number"
             android:padding="18sp"
             android:focusable="true" />
 
@@ -86,13 +73,28 @@
             android:padding="18sp"
             android:focusable="true" />
 
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:id="@+id/editText_rest_description"
+            android:hint="Description"
+            android:focusable="true"
+            android:inputType="textImeMultiLine"
+
+
+            android:layout_gravity="center_horizontal"
+            android:padding="18sp" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/add_rest_add_and_rate_button_text"
             android:id="@+id/button_add_and_rate"
             android:layout_gravity="right"
-            android:padding="25dp" />
+            android:padding="25dp"
+            android:onClick="button_to_rate_screen"/>
 
 
     </LinearLayout>

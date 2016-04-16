@@ -9,8 +9,9 @@ import java.util.ArrayList;
  */
 public class Restaurant {
     private String name;
-    private String city;
-    private String state;
+    private String type;
+    private String address;
+
     private String description;
     private int numOfReviews;
     private ArrayList<RateReviews> ratingList = new ArrayList<RateReviews>();
@@ -20,10 +21,10 @@ public class Restaurant {
 
     };
 
-    public Restaurant(String name, String city, String state, String description) {
+    public Restaurant(String name, String type, String address, String description) {
         this.name = name;
-        this.city = city;
-        this.state = state;
+        this.type = type;
+        this.address = address;
         this.description = description;
     }
 
@@ -35,20 +36,16 @@ public class Restaurant {
         return name;
     }
 
-    public void setCity(String c){
-        city = c;
+    public void setType(String n){ type = n; }
+
+    public String getType() {
+        return type;
     }
 
-    public String getCity(){
-        return city;
-    }
+    public void setAddress(String n){ address = n; }
 
-    public void setState(String s){
-        state = s;
-    }
-
-    public String getState(){
-        return state;
+    public String getAddress() {
+        return address;
     }
 
     public void setDescription(String d){

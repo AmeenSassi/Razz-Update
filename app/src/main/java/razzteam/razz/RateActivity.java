@@ -25,27 +25,45 @@ public class RateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rate);
 
-        name = (TextView) findViewById(R.id.Restaurant_Name);
-        cleanliness = (RatingBar) findViewById(R.id.cleanRatingBar);
-        ambiance = (RatingBar) findViewById(R.id.ambRatingBar);
-        fanciness = (RatingBar) findViewById(R.id.fancyRatingBar);
-        flvr = (RatingBar) findViewById(R.id.flavourRatingBar);
-        staff = (RatingBar) findViewById(R.id.staffRatingBar);
-        rate = (Button) findViewById(R.id.rateButton);
+        Bundle restData = getIntent().getExtras();
+        if(restData == null)
+        {
+            return;
+        }
+        else
+        {
+            String restName = restData.getString("newRestName");
+            String restType = restData.getString("newRestType");
+            String restAddress = restData.getString("newRestAddress");
+            String restDescription = restData.getString("newRestDescription");
 
-        toy = new Restaurant("Olive Garden", "aurora", "Colorado", "yay");
 
 
-        name.setText(toy.getName());
 
-        rate.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                toy.setClean(cleanliness.getRating());
-                toy.setAmbiance(ambiance.getRating());
-                toy.setFanciness(fanciness.getRating());
-                toy.setFlavour(flvr.getRating());
-                toy.setStaff(staff.getRating());
-            }
-        });
+
+
+            name = (TextView) findViewById(R.id.Restaurant_Name);
+            cleanliness = (RatingBar) findViewById(R.id.cleanRatingBar);
+            ambiance = (RatingBar) findViewById(R.id.ambRatingBar);
+            fanciness = (RatingBar) findViewById(R.id.fancyRatingBar);
+            flvr = (RatingBar) findViewById(R.id.flavourRatingBar);
+            staff = (RatingBar) findViewById(R.id.staffRatingBar);
+            rate = (Button) findViewById(R.id.rateButton);
+
+            toy = new Restaurant(restName, restType, restAddress, restDescription);
+
+
+            name.setText(toy.getName());
+
+            rate.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    toy.setClean(cleanliness.getRating());
+                    toy.setAmbiance(ambiance.getRating());
+                    toy.setFanciness(fanciness.getRating());
+                    toy.setFlavour(flvr.getRating());
+                    toy.setStaff(staff.getRating());
+                }
+            });
+        }
     }
 }

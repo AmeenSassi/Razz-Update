@@ -27,13 +27,13 @@ public class ListActivity extends AppCompatActivity {
     }
 
     private void populateRestaurantList() {
-        myRestaurants.add(new Restaurant("Taco Bell", "Colorado", "Denver", "Cheap Mexican food"));
-        myRestaurants.add(new Restaurant("Froyo", "Colorado", "Denver", "Cheap Mexican food"));
-        myRestaurants.add(new Restaurant("Stubens", "Colorado", "Denver", "Cheap Mexican food"));
-        myRestaurants.add(new Restaurant("Taco Bell", "Colorado", "Denver", "Cheap Mexican food"));
-        myRestaurants.add(new Restaurant("Taco Bell", "Colorado", "Denver", "Cheap Mexican food"));
-        myRestaurants.add(new Restaurant("Taco Bell", "Colorado", "Denver", "Cheap Mexican food"));
-        myRestaurants.add(new Restaurant("Taco Bell", "Colorado", "Denver", "Cheap Mexican food"));
+        myRestaurants.add(new Restaurant("Taco Bell", "Mexican", "Dever, CO", "Cheap Mexican food"));
+        myRestaurants.add(new Restaurant("Froyo", "Mexican", "Dever, CO", "Cheap Mexican food"));
+        myRestaurants.add(new Restaurant("Stubens", "Mexican", "Dever, CO", "Cheap Mexican food"));
+        myRestaurants.add(new Restaurant("Taco Bell", "Mexican", "Dever, CO", "Cheap Mexican food"));
+        myRestaurants.add(new Restaurant("Taco Bell", "Mexican", "Dever, CO", "Cheap Mexican food"));
+        myRestaurants.add(new Restaurant("Taco Bell", "Mexican", "Dever, CO", "Cheap Mexican food"));
+        myRestaurants.add(new Restaurant("Taco Bell", "Mexican", "Dever, CO", "Cheap Mexican food"));
     }
     private void populateListView(){
         ArrayAdapter<Restaurant> adapter = new MyListAdapter();
