@@ -9,10 +9,13 @@ import android.view.View;
 
 public class Add_Restaurant extends AppCompatActivity {
 
+    private String rest_name = "test";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_restaurant);
+        rest_name = "other";
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
