@@ -21,6 +21,14 @@ public class Restaurant {
 
     };
 
+    public ArrayList<RateReviews> getRatingList() {
+        return ratingList;
+    }
+
+    public void setRatingList(ArrayList<RateReviews> ratingList) {
+        this.ratingList = ratingList;
+    }
+
     public Restaurant(String name, String type, String address, String description) {
         this.name = name;
         this.type = type;

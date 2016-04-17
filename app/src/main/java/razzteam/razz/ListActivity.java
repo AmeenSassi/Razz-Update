@@ -1,10 +1,12 @@
 package razzteam.razz;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -13,7 +15,7 @@ import java.util.List;
 
 public class ListActivity extends AppCompatActivity {
 
-    private List<Restaurant> myRestaurants = new ArrayList<Restaurant>();
+    public List<Restaurant> myRestaurants = new ArrayList<Restaurant>();
 
 
 
@@ -26,7 +28,12 @@ public class ListActivity extends AppCompatActivity {
         populateListView();
     }
 
-    private void populateRestaurantList() {
+    public void sendMessage(View view){ //should go to the view_restaurant of this specific restaurant
+        Intent startNewActivity = new Intent(this, view_restaurant.class);
+        startActivity(startNewActivity);
+    }
+
+    public void populateRestaurantList() {
         myRestaurants.add(new Restaurant("Taco Bell", "Mexican", "Dever, CO", "Cheap Mexican food"));
         myRestaurants.add(new Restaurant("Froyo", "Mexican", "Dever, CO", "Cheap Mexican food"));
         myRestaurants.add(new Restaurant("Stubens", "Mexican", "Dever, CO", "Cheap Mexican food"));
@@ -43,7 +50,7 @@ public class ListActivity extends AppCompatActivity {
 
     private class MyListAdapter extends ArrayAdapter<Restaurant> {
         public MyListAdapter() {
-            super(ListActivity.this, R.layout.activity_list, myRestaurants);
+            super(ListActivity.this, R.layout.itemlayout, myRestaurants);
         }
 
         @Override
@@ -51,7 +58,7 @@ public class ListActivity extends AppCompatActivity {
             View itemView = convertView;
             //make sure we have a view to work with
             if (itemView == null) {
-                itemView = getLayoutInflater().inflate(R.layout.activity_list, parent, false);
+                itemView = getLayoutInflater().inflate(R.layout.itemlayout, parent, false);
             }
 
             //Find the car to work with
@@ -61,12 +68,8 @@ public class ListActivity extends AppCompatActivity {
             TextView Nametxt = (TextView) findViewById(R.id.NameText);
             Nametxt.setText(currentRestaurant.getName());
 
-            TextView Citytxt = (TextView) findViewById(R.id.CityText);
-            Nametxt.setText(currentRestaurant.getName());
-
-            TextView Statetxt = (TextView) findViewById(R.id.StateText);
-            Nametxt.setText(currentRestaurant.getName());
-
+            TextView Addresstxt = (TextView) findViewById(R.id.AddressText);
+            Addresstxt.setText(currentRestaurant.getAddress());
 
             return itemView;
         }
