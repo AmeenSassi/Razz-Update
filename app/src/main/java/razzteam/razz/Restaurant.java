@@ -15,6 +15,7 @@ public class Restaurant implements Parcelable {
     private String name;
     private String type;
     private String address;
+    private int average;
 
     private String description;
     private int numOfReviews;
@@ -70,11 +71,16 @@ public class Restaurant implements Parcelable {
         this.ratingList = ratingList;
     }
 
+<<<<<<< HEAD
     Restaurant(String name, String type, String address, String description) {
+=======
+    public Restaurant(String name, String type, String address, String description, int average) {
+>>>>>>> 27ac7bc9d274d1170d90fc3cffd853048fce2275
         this.name = name;
         this.type = type;
         this.address = address;
         this.description = description;
+        this.average = average;
     }
 
     public void setName(String n){
@@ -102,8 +108,12 @@ public class Restaurant implements Parcelable {
     }
 
     public String getDescription(){
-        return name;
+        return description;
     }
+
+    public int getAverage() {return average;}
+
+    public int setAverage(int i) { return average;}
 
     public void setClean(float num) {
         int i = ratingList.size();

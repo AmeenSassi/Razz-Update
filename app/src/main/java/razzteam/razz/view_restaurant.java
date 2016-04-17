@@ -49,4 +49,16 @@ public class view_restaurant extends AppCompatActivity {
 
 
     }
+<<<<<<< HEAD
+=======
+
+    public void tyler(View view)
+    {
+        //setContentView(R.layout.content_view_restaurant);
+
+        Intent startNewActivity = new Intent(this, ListActivity.class);
+        startActivity(startNewActivity);
+    }
+
+>>>>>>> 27ac7bc9d274d1170d90fc3cffd853048fce2275
 }
