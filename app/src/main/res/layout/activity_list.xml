@@ -29,7 +29,8 @@
         android:layout_marginTop="57dp"
         android:layout_below="@+id/view"
         android:layout_alignLeft="@+id/view"
-        android:layout_alignStart="@+id/view" />
+        android:layout_alignStart="@+id/view"
+        tools:listfooter="@layout/design_navigation_item" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -52,8 +53,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="AverageRating"
-        android:id="@+id/RatingView"
+        android:text="Description"
+        android:id="@+id/DescriptionText"
         android:layout_alignRight="@+id/NameText"
         android:layout_alignEnd="@+id/NameText"
         android:layout_below="@+id/NameText" />
@@ -62,8 +63,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ratingBar"
-        android:layout_below="@+id/RatingView"
+        android:layout_below="@+id/DescriptionText"
         android:layout_centerHorizontal="true"
+        android:isIndicator="true"
         android:numStars="5"
         android:rating="3" />
 
@@ -74,7 +76,7 @@
         android:layout_height="wrap_content"
         android:text=">>"
         android:id="@+id/buttonToView"
-        android:layout_below="@+id/RatingView"
+        android:layout_below="@+id/DescriptionText"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 

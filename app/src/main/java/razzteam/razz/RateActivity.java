@@ -36,6 +36,7 @@ public class RateActivity extends AppCompatActivity {
             String restType = restData.getString("newRestType");
             String restAddress = restData.getString("newRestAddress");
             String restDescription = restData.getString("newRestDescription");
+            int restAverage = restData.getInt("newRestAverage");
 
 
 
@@ -50,7 +51,7 @@ public class RateActivity extends AppCompatActivity {
             staff = (RatingBar) findViewById(R.id.staffRatingBar);
             rate = (Button) findViewById(R.id.rateButton);
 
-            toy = new Restaurant(restName, restType, restAddress, restDescription);
+            toy = new Restaurant(restName, restType, restAddress, restDescription, restAverage);
 
 
             name.setText(toy.getName());

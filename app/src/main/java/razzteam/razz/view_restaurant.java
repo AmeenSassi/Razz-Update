@@ -1,5 +1,6 @@
 package razzteam.razz;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -34,8 +35,8 @@ public class view_restaurant extends AppCompatActivity {
     {
         //setContentView(R.layout.content_view_restaurant);
 
-        TextView toChange = (TextView) findViewById(R.id.Restaurant_name);
-        toChange.setText("Olive Garden");
+        Intent startNewActivity = new Intent(this, ListActivity.class);
+        startActivity(startNewActivity);
     }
 
 }

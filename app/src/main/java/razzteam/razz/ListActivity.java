@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -34,13 +35,16 @@ public class ListActivity extends AppCompatActivity {
     }
 
     public void populateRestaurantList() {
-        myRestaurants.add(new Restaurant("Taco Bell", "Mexican", "Dever, CO", "Cheap Mexican food"));
-        myRestaurants.add(new Restaurant("Froyo", "Mexican", "Dever, CO", "Cheap Mexican food"));
-        myRestaurants.add(new Restaurant("Stubens", "Mexican", "Dever, CO", "Cheap Mexican food"));
-        myRestaurants.add(new Restaurant("Taco Bell", "Mexican", "Dever, CO", "Cheap Mexican food"));
-        myRestaurants.add(new Restaurant("Taco Bell", "Mexican", "Dever, CO", "Cheap Mexican food"));
-        myRestaurants.add(new Restaurant("Taco Bell", "Mexican", "Dever, CO", "Cheap Mexican food"));
-        myRestaurants.add(new Restaurant("Taco Bell", "Mexican", "Dever, CO", "Cheap Mexican food"));
+        myRestaurants.add(new Restaurant("Taco Bell1", "Mexican", "Dever, CO", "Cheap Mexican food", 5));
+        myRestaurants.add(new Restaurant("Froyo", "Mexican", "Aurora, CO", "Frozen yogurt", 3));
+        myRestaurants.add(new Restaurant("Stubens", "Diner", "Arvada, CO", "Revamped diner", 2));
+        myRestaurants.add(new Restaurant("Taco Bell2", "Mexican", "Golden, CO", "Cheap Mexican food", 1));
+        myRestaurants.add(new Restaurant("Jimmy John's", "Sandwhich", "Castle Pines, CO", "Sandwich shop", 5));
+        myRestaurants.add(new Restaurant("Olive Garden", "Mexican", "Dever, CO", "Family dining", 4));
+        myRestaurants.add(new Restaurant("Fuzzy's", "Tex Mex", "Dever, CO", "Tex Mex", 3));
+        myRestaurants.add(new Restaurant("Taco Bell3", "Mexican", "Dever, CO", "Cheap Mexican food", 2));
+        myRestaurants.add(new Restaurant("Taco Bell4", "Mexican", "Dever, CO", "Cheap Mexican food", 3));
+        myRestaurants.add(new Restaurant("Taco Bell5", "Mexican", "Dever, CO", "Cheap Mexican food", 1));
     }
     private void populateListView(){
         ArrayAdapter<Restaurant> adapter = new MyListAdapter();
@@ -70,6 +74,12 @@ public class ListActivity extends AppCompatActivity {
 
             TextView Addresstxt = (TextView) findViewById(R.id.AddressText);
             Addresstxt.setText(currentRestaurant.getAddress());
+
+            TextView Descriptiontxt = (TextView) findViewById(R.id.DescriptionText);
+            Descriptiontxt.setText(currentRestaurant.getDescription());
+
+            //RatingBar Ratingtxt = (RatingBar) findViewById(R.id.ratingBarView);
+            //Ratingtxt.setRating(currentRestaurant.getAverage());
 
             return itemView;
         }

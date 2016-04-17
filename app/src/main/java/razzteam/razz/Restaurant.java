@@ -11,6 +11,7 @@ public class Restaurant {
     private String name;
     private String type;
     private String address;
+    private int average;
 
     private String description;
     private int numOfReviews;
@@ -29,11 +30,12 @@ public class Restaurant {
         this.ratingList = ratingList;
     }
 
-    public Restaurant(String name, String type, String address, String description) {
+    public Restaurant(String name, String type, String address, String description, int average) {
         this.name = name;
         this.type = type;
         this.address = address;
         this.description = description;
+        this.average = average;
     }
 
     public void setName(String n){
@@ -61,8 +63,12 @@ public class Restaurant {
     }
 
     public String getDescription(){
-        return name;
+        return description;
     }
+
+    public int getAverage() {return average;}
+
+    public int setAverage(int i) { return average;}
 
     public void setClean(float num) {
         int i = ratingList.size();
