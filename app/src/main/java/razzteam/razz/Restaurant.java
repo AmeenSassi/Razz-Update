@@ -71,11 +71,7 @@ public class Restaurant implements Parcelable {
         this.ratingList = ratingList;
     }
 
-<<<<<<< HEAD
-    Restaurant(String name, String type, String address, String description) {
-=======
-    public Restaurant(String name, String type, String address, String description, int average) {
->>>>>>> 27ac7bc9d274d1170d90fc3cffd853048fce2275
+    Restaurant(String name, String type, String address, String description, int average) {
         this.name = name;
         this.type = type;
         this.address = address;

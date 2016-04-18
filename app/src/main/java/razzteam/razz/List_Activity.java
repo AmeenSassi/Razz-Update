@@ -14,7 +14,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class List_Activity extends ListActivity {
+public class List_Activity extends AppCompatActivity {
 
     public List<Restaurant> myRestaurants = new ArrayList<Restaurant>();
 
@@ -28,8 +28,8 @@ public class List_Activity extends ListActivity {
     }
 
     //****The OnListItemClick function with putExtra stuff
-    @Override
-    protected void onListItemClick(ListView list, View v, int position, long id) {
+    //@Override
+    /* protected void onListItemClick(ListView list, View v, int position, long id) {
         Restaurant item = (Restaurant) getListAdapter().getItem(position);
         ArrayList<RateReviews> itemRating = item.getRatingList();
         Intent toViewActivity = new Intent(this, view_restaurant.class);
@@ -37,10 +37,10 @@ public class List_Activity extends ListActivity {
         toViewActivity.putExtra("Rating", itemRating);
     }
     //*********************************************************
-
-    /*public void sendMessage(View view){ //should go to the view_restaurant of this specific restaurant
+    */
+    public void sendMessage(View view){ //should go to the view_restaurant of this specific restaurant
         Intent toViewActivity = new Intent(this, view_restaurant.class);
-    }*/
+    }
 
     public void populateRestaurantList() {
         myRestaurants.add(new Restaurant("Taco Bell1", "Mexican", "Dever, CO", "Cheap Mexican food", 5));
