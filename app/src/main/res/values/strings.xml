@@ -8,4 +8,5 @@
     <string name="title_activity_add__restaurant">Add_Restaurant</string>
     <string name="add_rest_page_title">Add Restaurant</string>
     <string name="add_rest_add_and_rate_button_text">Add and Rate!</string>
+    <string name="title_activity_list_2_">List_2_Activity</string>
 </resources>

@@ -36,20 +36,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/ratingBarView"
         android:numStars="5"
-        android:layout_alignTop="@+id/buttonToView"
         android:isIndicator="true"
+        android:layout_alignTop="@+id/AddressText"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=">>"
-        android:id="@+id/buttonToView"
-        android:layout_below="@+id/DescriptionText"
-        android:layout_alignParentRight="true"
-        android:onClick="sendMessage"
-        android:layout_alignParentEnd="true" />
 
 
 

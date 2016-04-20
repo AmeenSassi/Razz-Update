@@ -2,6 +2,8 @@ package razzteam.razz;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,21 +25,32 @@ public class List_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Intent intent = new Intent(List_Activity.this, Add_Restaurant.class);
+                startActivity(intent);
+               // Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+               //         .setAction("Action", null).show();
+            }
+        });
+
         populateRestaurantList();
         populateListView();
     }
 
     //****The OnListItemClick function with putExtra stuff
-    //@Override
-    /* protected void onListItemClick(ListView list, View v, int position, long id) {
-        Restaurant item = (Restaurant) getListAdapter().getItem(position);
-        ArrayList<RateReviews> itemRating = item.getRatingList();
-        Intent toViewActivity = new Intent(this, view_restaurant.class);
-        toViewActivity.putExtra("Restaurant", item);
-        toViewActivity.putExtra("Rating", itemRating);
-    }
+//    @Override
+//     protected void onListItemClick(ListView list, View v, int position, long id) {
+//        Restaurant item = (Restaurant) getListAdapter().getItem(position);
+//        ArrayList<RateReviews> itemRating = item.getRatingList();
+//        Intent toViewActivity = new Intent(this, view_restaurant.class);
+//        toViewActivity.putExtra("Restaurant", item);
+//        toViewActivity.putExtra("Rating", itemRating);
+//    }
     //*********************************************************
-    */
+
     public void sendMessage(View view){ //should go to the view_restaurant of this specific restaurant
         Intent toViewActivity = new Intent(this, view_restaurant.class);
     }
