@@ -7,6 +7,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -24,19 +26,24 @@ public class view_restaurant extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Intent inIntent = getIntent();
-        Restaurant myRestaurant = (Restaurant) inIntent.getParcelableExtra("Restaurant");
-        ArrayList<RateReviews> rating = (ArrayList) inIntent.getParcelableExtra("Rating");
-        myRestaurant.setRatingList(rating);
+        Bundle restData = getIntent().getExtras();
+        if(restData == null)
+        {
+            return;
+        }
+        else
+        {
+            String restName = restData.getString("newRestName");
+            String restType = restData.getString("newRestType");
+            String restAddress = restData.getString("newRestAddress");
+            String restDescription = restData.getString("newRestDescription");
+            int restAverage = restData.getInt("newRestAverage");
 
-        name = (TextView) findViewById(R.id.Restaurant_name);
-        address = (TextView) findViewById(R.id.Address_text);
-        type = (TextView) findViewById(R.id.rest_type_text);
-
-
+        }
+/*
         name.setText(myRestaurant.getName());
         address.setText(myRestaurant.getAddress());
-        type.setText(myRestaurant.getType());
+        type.setText(myRestaurant.getType());*/
 
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {

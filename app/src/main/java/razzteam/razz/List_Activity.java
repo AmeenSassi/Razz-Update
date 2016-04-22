@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -25,19 +26,19 @@ public class List_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
+        populateRestaurantList();
+        populateListView();
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final Intent intent = new Intent(List_Activity.this, Add_Restaurant.class);
                 startActivity(intent);
-               // Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-               //         .setAction("Action", null).show();
             }
         });
 
-        populateRestaurantList();
-        populateListView();
+
     }
 
     //****The OnListItemClick function with putExtra stuff
@@ -52,7 +53,17 @@ public class List_Activity extends AppCompatActivity {
     //*********************************************************
 
     public void sendMessage(View view){ //should go to the view_restaurant of this specific restaurant
-        Intent toViewActivity = new Intent(this, view_restaurant.class);
+
+        TextView rName = (TextView) findViewById(R.id.NameText);
+        TextView rType = (TextView) findViewById(R.id.NameText);
+        TextView rAdd = (TextView) findViewById(R.id.AddressText);
+        TextView rDescription = (TextView) findViewById(R.id.DescriptionText);
+        Intent toViewActivity = new Intent(List_Activity.this, view_restaurant.class);
+        toViewActivity.putExtra("newRestName", rName.getText().toString());
+        toViewActivity.putExtra("newRestType", rType.getText().toString());
+        toViewActivity.putExtra("newRestAddress", rAdd.getText().toString());
+        toViewActivity.putExtra("newRestDescription", rDescription.getText().toString());
+        startActivity(toViewActivity);
     }
 
     public void populateRestaurantList() {
@@ -86,7 +97,7 @@ public class List_Activity extends AppCompatActivity {
                 itemView = getLayoutInflater().inflate(R.layout.itemlayout, parent, false);
             }
 
-            //Find the car to work with
+            //Find the restaurant to work with
             Restaurant currentRestaurant = myRestaurants.get(position);
 
             //Fill in the view

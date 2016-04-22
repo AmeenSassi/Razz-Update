@@ -70,6 +70,15 @@
         android:rating="3" />
 
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=">>"
+        android:id="@+id/buttonToView"
+        android:layout_below="@+id/DescriptionText"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 
     <android.support.design.widget.FloatingActionButton
