@@ -21,7 +21,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
 
 
-        android:text="@string/active_rest_name"
+        android:text="Restaurant_name"
         android:typeface="serif"
         android:textSize="40dp"
         android:fontFamily="serif"

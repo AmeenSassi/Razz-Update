@@ -26,36 +26,27 @@ public class view_restaurant extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Bundle restData = getIntent().getExtras();
-        if(restData == null)
-        {
-            return;
+        Restaurant restaurant = new Restaurant();
+        Bundle extras = getIntent().getExtras();
+        if(extras != null){
+            restaurant = extras.getParcelable("RestaurantExtra");
         }
-        else
-        {
-            String restName = restData.getString("newRestName");
-            String restType = restData.getString("newRestType");
-            String restAddress = restData.getString("newRestAddress");
-            String restDescription = restData.getString("newRestDescription");
-            int restAverage = restData.getInt("newRestAverage");
 
-        }
-/*
-        name.setText(myRestaurant.getName());
-        address.setText(myRestaurant.getAddress());
-        type.setText(myRestaurant.getType());*/
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
+        TextView NameTxt = (TextView) findViewById(R.id.Restaurant_name);
+        NameTxt.setText(restaurant.getName());
+
+        TextView AddressTxt = (TextView) findViewById(R.id.Address_text);
+        AddressTxt.setText(restaurant.getAddress());
+
+        TextView TypeTxt = (TextView) findViewById(R.id.rest_type_text);
+        TypeTxt.setText(restaurant.getType());
+
 
 
     }
+
+
 
     public void tyler(View view)
     {

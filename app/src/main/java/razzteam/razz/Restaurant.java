@@ -15,7 +15,7 @@ public class Restaurant implements Parcelable {
     private String name;
     private String type;
     private String address;
-    private int average;
+    private int listPosition;
 
     private String description;
     private int numOfReviews;
@@ -26,16 +26,17 @@ public class Restaurant implements Parcelable {
 
     };
 
-    Restaurant(Parcel in){
+    public Restaurant(Parcel in){
         this.name = in.readString();
         this.type = in.readString();
         this.address = in.readString();
         this.description = in.readString();
         this.numOfReviews = in.readInt();
         this.ratingList = new ArrayList<RateReviews>();
-        in.readTypedList(ratingList, RateReviews.CREATOR);
+        // in.readTypedList(ratingList, RateReviews.CREATOR);
     }
 
+    @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
         dest.writeString(type);
@@ -45,19 +46,19 @@ public class Restaurant implements Parcelable {
         dest.writeTypedList(ratingList);
     }
 
-
+    @Override
     public int describeContents() {
         return 0;
     }
 
-    static final Parcelable.Creator<Restaurant> CREATOR
-            = new Parcelable.Creator<Restaurant>() {
+    public static final Parcelable.Creator<Restaurant> CREATOR = new Parcelable.Creator<Restaurant>() {
 
-
+        @Override
         public Restaurant createFromParcel(Parcel in) {
             return new Restaurant(in);
         }
 
+        @Override
         public Restaurant[] newArray(int size) {
             return new Restaurant[size];
         }
@@ -76,7 +77,7 @@ public class Restaurant implements Parcelable {
         this.type = type;
         this.address = address;
         this.description = description;
-        this.average = average;
+        this.listPosition = average;
     }
 
     public void setName(String n){
@@ -107,9 +108,9 @@ public class Restaurant implements Parcelable {
         return description;
     }
 
-    public int getAverage() {return average;}
+    public int getListPosition() {return listPosition;}
 
-    public int setAverage(int i) { return average;}
+    public int setListPosition(int i) { return listPosition;}
 
     public void setClean(float num) {
         int i = ratingList.size();
