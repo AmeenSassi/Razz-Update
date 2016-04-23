@@ -159,4 +159,61 @@ public class Restaurant implements Parcelable {
         return ratingList.get(i).getStaff();
     }
 
+    public float ambianceAVG(){
+        float average = 0;
+        for(int i = 0; i < ratingList.size(); i++)
+        {
+            average += ratingList.get(i).getAmbiance();
+        }
+        average = average/(ratingList.size());
+
+        return average;
+    }
+
+    public float cleanAVG(){
+        float average = 0;
+        for(int i = 0; i < ratingList.size(); i++)
+        {
+            average += ratingList.get(i).getClean();
+        }
+        average = average/(ratingList.size());
+
+        return average;
+    }
+
+    public float fancyAVG(){
+        float average = 0;
+        for(int i = 0; i < ratingList.size(); i++)
+        {
+            average += ratingList.get(i).getFanciness();
+        }
+        average = average/(ratingList.size());
+
+        return average;
+    }
+
+    public float flavorAVG(){
+        float average = 0;
+        for(int i = 0; i < ratingList.size(); i++)
+        {
+            average += ratingList.get(i).getFlavour();
+        }
+        average = average/(ratingList.size());
+
+        return average;
+    }
+
+    public float staffAVG(){
+        float average = 0;
+        for(int i = 0; i < ratingList.size(); i++)
+        {
+            average += ratingList.get(i).getStaff();
+        }
+        average = average/(ratingList.size());
+
+        return average;
+    }
+
+
+
 }
