@@ -214,6 +214,19 @@ public class Restaurant implements Parcelable {
         return average;
     }
 
+    public float getAverage(){
+        float cleanAVG = this.cleanAVG();
+        float ambianceAVG = this.ambianceAVG();
+        float fancyAVG = this.fancyAVG();
+        float flavorAVG = this.flavorAVG();
+        float staffAVG = this.staffAVG();
+
+        float average = cleanAVG + ambianceAVG + fancyAVG + flavorAVG + staffAVG;
+        average = average/5;
+
+        return average;
+
+    }
 
 
 }

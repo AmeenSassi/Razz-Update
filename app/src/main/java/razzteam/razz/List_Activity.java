@@ -137,7 +137,7 @@ public class List_Activity extends AppCompatActivity  {
 
             currentRestaurant.setListPosition(position);
 
-            //RatingBar Ratingtxt = (RatingBar) findViewById(R.id.ratingBarView);
+            //RatingBar Ratingtxt = (RatingBar) findViewById(R.id.ratingBar);
             //Ratingtxt.setRating(currentRestaurant.getAverage());
 
             return itemView;
