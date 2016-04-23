@@ -1,5 +1,6 @@
 package razzteam.razz;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
@@ -25,19 +26,21 @@ public class RateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rate);
 
-        Bundle restData = getIntent().getExtras();
-        if(restData == null)
-        {
-            return;
-        }
-        else
-        {
-            String restName = restData.getString("newRestName");
-            String restType = restData.getString("newRestType");
-            String restAddress = restData.getString("newRestAddress");
-            String restDescription = restData.getString("newRestDescription");
-            int restAverage = restData.getInt("newRestAverage");
 
+//            String restName = restData.getString("newRestName");
+//            String restType = restData.getString("newRestType");
+//            String restAddress = restData.getString("newRestAddress");
+//            String restDescription = restData.getString("newRestDescription");
+//            int restAverage = restData.getInt("newRestAverage");
+
+
+            //  NEED TO RECEIVE PARCELABLE HERE
+
+            toy = new Restaurant();
+            Bundle extras = getIntent().getExtras();
+            if(extras != null){
+                toy = extras.getParcelable("RestaurantExtra");
+            }
 
 
 
@@ -51,7 +54,6 @@ public class RateActivity extends AppCompatActivity {
             staff = (RatingBar) findViewById(R.id.staffRatingBar);
             rate = (Button) findViewById(R.id.rateButton);
 
-            toy = new Restaurant(restName, restType, restAddress, restDescription, restAverage);
 
 
             name.setText(toy.getName());
@@ -65,6 +67,24 @@ public class RateActivity extends AppCompatActivity {
                     toy.setStaff(staff.getRating());
                 }
             });
-        }
+
+    }
+
+    public void rateButton(View view)
+    {
+
+        //I think this is all the necessary fields to set
+        toy.setStaff(staff.getRating());
+        toy.setClean(cleanliness.getRating());
+        toy.setAmbiance(ambiance.getRating());
+        toy.setFanciness(fanciness.getRating());
+        toy.setFlavour(flvr.getRating());
+        toy.setStaff(staff.getRating());
+
+
+        Intent resultIntent = new Intent(RateActivity.this, List_Activity.class);
+        resultIntent.putExtra("RestaurantExtra", toy);
+
+        startActivity(resultIntent);
     }
 }

@@ -44,6 +44,16 @@ public class List_Activity extends AppCompatActivity  {
         });
 
 
+
+        Restaurant nRest = new Restaurant();
+        Bundle extras = getIntent().getExtras();
+        if(extras != null){
+            nRest = extras.getParcelable("RestaurantExtra");
+            myRestaurants.add(nRest);
+        }
+
+
+
     }
 
     @Override

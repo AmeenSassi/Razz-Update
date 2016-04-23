@@ -41,15 +41,26 @@ public class Add_Restaurant extends AppCompatActivity {
         EditText rType = (EditText) findViewById(R.id.editText_rest_type);
         EditText rAdd = (EditText) findViewById(R.id.editText_rest_address);
         EditText rDescription = (EditText) findViewById(R.id.editText_rest_description);
+        //don't have a getter for average here because there is no average before thins is rated
 
-        Intent intent = new Intent(this, RateActivity.class);
+        Restaurant nRest = new Restaurant(rName.getText().toString(), rType.getText().toString(), rAdd.getText().toString(), rDescription.getText().toString(), 0);
+//        Intent intent = new Intent(this, RateActivity.class);
+//
+//        intent.putExtra("newRestName", rName.getText().toString());
+//        intent.putExtra("newRestType", rType.getText().toString());
+//        intent.putExtra("newRestAddress", rAdd.getText().toString());
+//        intent.putExtra("newRestDescription", rDescription.getText().toString());
 
-        intent.putExtra("newRestName", rName.getText().toString());
-        intent.putExtra("newRestType", rType.getText().toString());
-        intent.putExtra("newRestAddress", rAdd.getText().toString());
-        intent.putExtra("newRestDescription", rDescription.getText().toString());
+//        startActivity(intent);
 
-        startActivity(intent);
+
+
+        //NEED TO SEND PARCELABLE HERE
+
+        Intent resultIntent = new Intent(Add_Restaurant.this, RateActivity.class);
+        resultIntent.putExtra("RestaurantExtra", nRest);
+
+        startActivity(resultIntent);
     }
 
 }
