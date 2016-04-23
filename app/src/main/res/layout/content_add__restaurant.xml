@@ -45,6 +45,7 @@
             android:id="@+id/editText_rest_name"
 
 
+            android:inputType="textImeMultiLine"
             android:hint="Restaurant Name"
             android:focusableInTouchMode="true"
             android:padding="18sp"
@@ -58,6 +59,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/editText_rest_type"
 
+            android:inputType="textImeMultiLine"
             android:hint="Restaurant Type"
             android:padding="18sp"
             android:focusable="true" />
@@ -65,9 +67,10 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPostalAddress"
+            android:inputType="textImeMultiLine"
             android:ems="10"
             android:id="@+id/editText_rest_address"
+
 
             android:hint="Address"
             android:padding="18sp"
