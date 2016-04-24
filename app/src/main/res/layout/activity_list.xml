@@ -36,28 +36,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Restaurant Name shown here"
+        android:text="RestaurantNameShownHere"
         android:id="@+id/NameText"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Address"
+        android:text="AddressShownHere"
         android:id="@+id/AddressText"
-        android:layout_below="@+id/NameText" />
+        android:layout_alignBottom="@+id/TypeText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/TypeText"
+        android:layout_toStartOf="@+id/TypeText" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Description"
-        android:id="@+id/DescriptionText"
-        android:layout_alignRight="@+id/NameText"
-        android:layout_alignEnd="@+id/NameText"
-        android:layout_below="@+id/NameText" />
+        android:text="TypeShownHere"
+        android:id="@+id/TypeText"
+        android:layout_alignTop="@+id/buttonToView"
+        android:layout_toStartOf="@+id/buttonToView"
+        android:layout_toLeftOf="@+id/buttonToView" />
+
 
 
     <Button
@@ -66,9 +74,17 @@
         android:layout_height="wrap_content"
         android:text=">>"
         android:id="@+id/buttonToView"
-        android:layout_below="@+id/DescriptionText"
+        android:layout_below="@+id/NameText"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar"
+        android:isIndicator="true"
+        android:layout_below="@+id/AddressText"
+        android:layout_centerHorizontal="true" />
 
 
     <android.support.design.widget.FloatingActionButton

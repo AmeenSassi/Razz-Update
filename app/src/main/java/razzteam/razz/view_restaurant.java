@@ -39,8 +39,8 @@ public class view_restaurant extends AppCompatActivity {
         TextView AddressTxt = (TextView) findViewById(R.id.Address_text);
         AddressTxt.setText(restaurant.getAddress());
 
-        TextView TypeTxt = (TextView) findViewById(R.id.rest_type_text);
-        TypeTxt.setText(restaurant.getType());
+        TextView DescriptionTxt = (TextView) findViewById(R.id.rest_type_text);
+        DescriptionTxt.setText(restaurant.getDescription());
 
 
 
@@ -50,8 +50,6 @@ public class view_restaurant extends AppCompatActivity {
 
     public void tyler(View view)
     {
-        //setContentView(R.layout.content_view_restaurant);
-
         Intent startNewActivity = new Intent(this, List_Activity.class);
         startActivity(startNewActivity);
     }

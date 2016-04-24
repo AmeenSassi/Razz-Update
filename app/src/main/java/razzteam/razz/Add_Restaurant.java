@@ -43,7 +43,7 @@ public class Add_Restaurant extends AppCompatActivity {
         EditText rDescription = (EditText) findViewById(R.id.editText_rest_description);
         //don't have a getter for average here because there is no average before thins is rated
 
-        Restaurant nRest = new Restaurant(rName.getText().toString(), rType.getText().toString(), rAdd.getText().toString(), rDescription.getText().toString(), 0);
+        Restaurant nRest = new Restaurant(rName.getText().toString(), rType.getText().toString(), rAdd.getText().toString(), rDescription.getText().toString());
 //        Intent intent = new Intent(this, RateActivity.class);
 //
 //        intent.putExtra("newRestName", rName.getText().toString());

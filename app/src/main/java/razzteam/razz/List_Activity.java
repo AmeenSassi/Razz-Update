@@ -43,17 +43,12 @@ public class List_Activity extends AppCompatActivity  {
             }
         });
 
-
-
         Restaurant nRest = new Restaurant();
         Bundle extras = getIntent().getExtras();
         if(extras != null){
             nRest = extras.getParcelable("RestaurantExtra");
             myRestaurants.add(nRest);
         }
-
-
-
     }
 
     @Override
@@ -77,16 +72,16 @@ public class List_Activity extends AppCompatActivity  {
 
 
     public void populateRestaurantList() {
-        myRestaurants.add(new Restaurant("Taco Bell1", "Mexican", "Dever, CO", "Cheap Mexican food", 5));
-        myRestaurants.add(new Restaurant("Froyo", "Mexican", "Aurora, CO", "Frozen yogurt", 3));
-        myRestaurants.add(new Restaurant("Stubens", "Diner", "Arvada, CO", "Revamped diner", 2));
-        myRestaurants.add(new Restaurant("Taco Bell2", "Mexican", "Golden, CO", "Cheap Mexican food", 1));
-        myRestaurants.add(new Restaurant("Jimmy John's", "Sandwhich", "Castle Pines, CO", "Sandwich shop", 5));
-        myRestaurants.add(new Restaurant("Olive Garden", "Mexican", "Dever, CO", "Family dining", 4));
-        myRestaurants.add(new Restaurant("Fuzzy's", "Tex Mex", "Dever, CO", "Tex Mex", 3));
-        myRestaurants.add(new Restaurant("Taco Bell3", "Mexican", "Dever, CO", "Cheap Mexican food", 2));
-        myRestaurants.add(new Restaurant("Taco Bell4", "Mexican", "Dever, CO", "Cheap Mexican food", 3));
-        myRestaurants.add(new Restaurant("Taco Bell5", "Mexican", "Dever, CO", "Cheap Mexican food", 1));
+        myRestaurants.add(new Restaurant("Taco Bell", "Mexican", "Dever, CO", "Cheap Mexican fast food"));
+        myRestaurants.add(new Restaurant("Froyo", "Dessert", "Aurora, CO", "Frozen yogurt with fun toppings"));
+        myRestaurants.add(new Restaurant("Stubens", "Diner", "Arvada, CO", "Revamped diner"));
+        myRestaurants.add(new Restaurant("3 Margaritas", "Mexican", "Golden, CO", "Sit-down Mexican food"));
+        myRestaurants.add(new Restaurant("Jimmy John's", "Sandwhich", "Castle Pines, CO", "Easy sandwich shop"));
+        myRestaurants.add(new Restaurant("Olive Garden", "Sit-down", "Dever, CO", "Family dining"));
+        myRestaurants.add(new Restaurant("Fuzzy's", "Tex Mex", "Dever, CO", "Tex Mex with a lot of booze"));
+        myRestaurants.add(new Restaurant("Mcdonalds", "Fast food", "Dever, CO", "Burgers and fast food"));
+        myRestaurants.add(new Restaurant("Pizza Hut", "Pizza", "Dever, CO", "Pizza and salad bar"));
+        myRestaurants.add(new Restaurant("Starbucks", "CoffeeShop", "Dever, CO", "Gormet coffee at expensive prices"));
     }
     private void populateListView(){
         ArrayAdapter<Restaurant> adapter = new MyListAdapter();
@@ -116,14 +111,14 @@ public class List_Activity extends AppCompatActivity  {
             viewButton.setTag(position);
             viewButton.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View arg0){ //STARTS THE VIEW RESTAURANT ACTIVITY BY BUTTON PRESS
-                    int position = (Integer)arg0.getTag();
+                public void onClick(View arg0) { //STARTS THE VIEW RESTAURANT ACTIVITY BY BUTTON PRESS
+                    int position = (Integer) arg0.getTag();
                     Intent resultIntent = new Intent(List_Activity.this, view_restaurant.class);
                     resultIntent.putExtra("RestaurantExtra", myRestaurants.get(position));
 
                     startActivity(resultIntent);
-                    }
-                });
+                }
+            });
 
             //Fill in the view
             TextView Nametxt = (TextView) findViewById(R.id.NameText);
@@ -132,13 +127,11 @@ public class List_Activity extends AppCompatActivity  {
             TextView Addresstxt = (TextView) findViewById(R.id.AddressText);
             Addresstxt.setText(currentRestaurant.getAddress());
 
-            TextView Descriptiontxt = (TextView) findViewById(R.id.DescriptionText);
-            Descriptiontxt.setText(currentRestaurant.getDescription());
+            TextView Typetxt = (TextView) findViewById(R.id.TypeText);
+            Typetxt.setText(currentRestaurant.getType());
 
-            currentRestaurant.setListPosition(position);
-
-            //RatingBar Ratingtxt = (RatingBar) findViewById(R.id.ratingBar);
-            //Ratingtxt.setRating(currentRestaurant.getAverage());
+            RatingBar Ratingtxt = (RatingBar) findViewById(R.id.ratingBar);
+            Ratingtxt.setRating(currentRestaurant.getAverage());
 
             return itemView;
         }

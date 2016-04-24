@@ -15,7 +15,6 @@ public class Restaurant implements Parcelable {
     private String name;
     private String type;
     private String address;
-    private int listPosition;
 
     private String description;
     private int numOfReviews;
@@ -72,12 +71,11 @@ public class Restaurant implements Parcelable {
         this.ratingList = ratingList;
     }
 
-    Restaurant(String name, String type, String address, String description, int average) {
+    Restaurant(String name, String type, String address, String description) {
         this.name = name;
         this.type = type;
         this.address = address;
         this.description = description;
-        this.listPosition = average;
     }
 
     public void setName(String n){
@@ -108,9 +106,6 @@ public class Restaurant implements Parcelable {
         return description;
     }
 
-    public int getListPosition() {return listPosition;}
-
-    public int setListPosition(int i) { return listPosition;}
 
     public void setClean(float num) {
         int i = ratingList.size();
