@@ -39,7 +39,14 @@ public class RateActivity extends AppCompatActivity {
             toy = new Restaurant();
             Bundle extras = getIntent().getExtras();
             if(extras != null){
-                toy = extras.getParcelable("RestaurantExtra");
+                Restaurant nRest = extras.getParcelable("RestaurantExtra");
+                //would like to call set setters and getters here to properly copy values into the "toy" object, but can't yet
+                toy.setName(nRest.getName());
+                toy.setType(nRest.getType());
+                toy.setAddress(nRest.getAddress());
+                toy.setDescription(nRest.getDescription());
+
+
             }
 
 
@@ -54,34 +61,38 @@ public class RateActivity extends AppCompatActivity {
             staff = (RatingBar) findViewById(R.id.staffRatingBar);
             rate = (Button) findViewById(R.id.rateButton);
 
-
-
             name.setText(toy.getName());
 
             rate.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                    toy.setClean(cleanliness.getRating());
-                    toy.setAmbiance(ambiance.getRating());
-                    toy.setFanciness(fanciness.getRating());
-                    toy.setFlavour(flvr.getRating());
-                    toy.setStaff(staff.getRating());
+
+                    Intent resultIntent = new Intent(RateActivity.this, List_Activity.class);
+                    resultIntent.putExtra("RestaurantExtra", toy);
+
+                    startActivity(resultIntent);
+//                    toy.setClean(cleanliness.getRating());
+//                    toy.setAmbiance(ambiance.getRating());
+//                    toy.setFanciness(fanciness.getRating());
+//                    toy.setFlavour(flvr.getRating());
+//                    toy.setStaff(staff.getRating());
                 }
             });
 
     }
 
-    public void rateButton(View view)
+    //the button does not link to here, it goes the listener above
+    public void rateApp(View view)
     {
 
-        //I think this is all the necessary fields to set
-        toy.setStaff(staff.getRating());
-        toy.setClean(cleanliness.getRating());
-        toy.setAmbiance(ambiance.getRating());
-        toy.setFanciness(fanciness.getRating());
-        toy.setFlavour(flvr.getRating());
-        toy.setStaff(staff.getRating());
-
-
+//        //I think this is all the necessary fields to set
+//        toy.setStaff(staff.getRating());
+//        toy.setClean(cleanliness.getRating());
+//        toy.setAmbiance(ambiance.getRating());
+//        toy.setFanciness(fanciness.getRating());
+//        toy.setFlavour(flvr.getRating());
+//        toy.setStaff(staff.getRating());
+//
+//
         Intent resultIntent = new Intent(RateActivity.this, List_Activity.class);
         resultIntent.putExtra("RestaurantExtra", toy);
 

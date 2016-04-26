@@ -22,7 +22,7 @@ import java.util.List;
 
 public class List_Activity extends AppCompatActivity  {
 
-    public List<Restaurant> myRestaurants = new ArrayList<Restaurant>();
+    public static List<Restaurant> myRestaurants = new ArrayList<Restaurant>();
     int index = 0;
     ListView list;
 
@@ -30,8 +30,8 @@ public class List_Activity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-        populateRestaurantList();
-        populateListView();
+        //populateRestaurantList();
+//        populateListView();
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -49,6 +49,8 @@ public class List_Activity extends AppCompatActivity  {
             nRest = extras.getParcelable("RestaurantExtra");
             myRestaurants.add(nRest);
         }
+        populateListView();
+
     }
 
     @Override
