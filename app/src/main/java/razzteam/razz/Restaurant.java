@@ -18,15 +18,15 @@ public class Restaurant implements Parcelable {
     private String description;
     private int numOfReviews;
     private float[] clean = new float[100];
-    private int cleanUsed;
+    private int cleanUsed = 0;
     private float[] ambiance = new float[100];
-    private int ambianceUsed;
+    private int ambianceUsed = 0;
     private float[] flavour = new float[100];
-    private int flavourUsed;
+    private int flavourUsed = 0;
     private float[] fancy = new float[100];
-    private int fancyUsed;
+    private int fancyUsed = 0;
     private float[] staff = new float[100];
-    private int staffUsed;
+    private int staffUsed = 0;
 
     private float average;
     //private RateReviews review = new RateReviews();
@@ -134,32 +134,32 @@ public class Restaurant implements Parcelable {
 
     public void setClean(Float num) {
         int i = cleanUsed;
-        cleanUsed++;
         clean[i] = num;
+        cleanUsed++;
     }
 
     public void setAmbiance(float num) {
         int i = ambianceUsed;
-        ambianceUsed++;
         ambiance[i] = num;
+        ambianceUsed++;
     }
 
     public void setFanciness(float num) {
         int i = fancyUsed;
-        fancyUsed++;
         fancy[i] = num;
+        fancyUsed++;
     }
 
     public void setFlavour(float num) {
         int i = flavourUsed;
-        flavourUsed++;
         flavour[i] = num;
+        flavourUsed++;
     }
 
     public void setStaff(float num) {
         int i = staffUsed;
-        staffUsed++;
         staff[i] = num;
+        staffUsed++;
     }
 
 
@@ -186,7 +186,7 @@ public class Restaurant implements Parcelable {
 
     public float ambianceAVG(){
         float average = 0;
-        for(int i = 0; i < ambianceUsed; i++)
+        for(int i = 0; i <= ambianceUsed; i++)
         {
             average += ambiance[i];
         }
@@ -197,7 +197,7 @@ public class Restaurant implements Parcelable {
 
     public float cleanAVG(){
         float average = 0;
-        for(int i = 0; i < cleanUsed; i++)
+        for(int i = 0; i <= cleanUsed; i++)
         {
             average += clean[i];
         }
@@ -208,7 +208,7 @@ public class Restaurant implements Parcelable {
 
     public float fancyAVG(){
         float average = 0;
-        for(int i = 0; i < fancyUsed; i++)
+        for(int i = 0; i <= fancyUsed; i++)
         {
             average += fancy[i];
         }
@@ -219,7 +219,7 @@ public class Restaurant implements Parcelable {
 
     public float flavorAVG(){
         float average = 0;
-        for(int i = 0; i < flavourUsed; i++)
+        for(int i = 0; i <= flavourUsed; i++)
         {
             average += flavour[i];
         }
@@ -230,7 +230,7 @@ public class Restaurant implements Parcelable {
 
     public float staffAVG(){
         float average = 0;
-        for(int i = 0; i < staffUsed; i++)
+        for(int i = 0; i <= staffUsed; i++)
         {
             average += staff[i];
         }
@@ -240,18 +240,27 @@ public class Restaurant implements Parcelable {
     }
 
     public float getAverage(){
+
+//        float cleanAVG = this.cleanAVG();
+//        float ambianceAVG = this.ambianceAVG();
+//        float fancyAVG = this.fancyAVG();
+//        float flavorAVG = this.flavorAVG();
+//        float staffAVG = this.staffAVG();
+
+        float cleanAVG = this.getClean(0);
+        float ambianceAVG = this.getAmbiance(0);
+        float fancyAVG = this.getFanciness(0);
+        float flavorAVG = this.getFlavour(0);
+        float staffAVG = this.getStaff(0);
+
+        average = cleanAVG + ambianceAVG + fancyAVG + flavorAVG + staffAVG;
+        average = average/5;
+
         return average;
     }
 
     public void setAverage(){
-        float cleanAVG = this.cleanAVG();
-        float ambianceAVG = this.ambianceAVG();
-        float fancyAVG = this.fancyAVG();
-        float flavorAVG = this.flavorAVG();
-        float staffAVG = this.staffAVG();
 
-        average = cleanAVG + ambianceAVG + fancyAVG + flavorAVG + staffAVG;
-        average = average/5;
     }
 
 

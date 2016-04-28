@@ -25,12 +25,14 @@ public class List_Activity extends AppCompatActivity  {
     public static List<Restaurant> myRestaurants = new ArrayList<Restaurant>();
     int index = 0;
     ListView list;
+    boolean FirstCreate = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-        //populateRestaurantList();
+
+        populateRestaurantList();
         //populateListView();
 
 
@@ -130,7 +132,7 @@ public class List_Activity extends AppCompatActivity  {
         myRestaurants.get(6).setFlavour((float) 4);
         myRestaurants.get(6).setStaff((float) 4);
         //---------------------------------------------------
-        myRestaurants.add(new Restaurant("Mcdonalds", "Fast food", "Dever, CO", "Burgers and fast food"));
+        myRestaurants.add(new Restaurant("Mcdonalds", "Fast food", "Denver, CO", "Burgers and fast food"));
         //--------------------------------------------------
         myRestaurants.get(7).setClean((float) 3);
         myRestaurants.get(7).setAmbiance((float) 3);
@@ -154,7 +156,11 @@ public class List_Activity extends AppCompatActivity  {
         myRestaurants.get(9).setFlavour((float)1);
         myRestaurants.get(9).setStaff((float)1);
         //---------------------------------------------------
+
+
     }
+
+
     private void populateListView(){
         ArrayAdapter<Restaurant> adapter = new MyListAdapter();
         list = (ListView) findViewById(R.id.restaurantListView);

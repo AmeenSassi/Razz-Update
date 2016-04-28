@@ -68,13 +68,14 @@ public class RateActivity extends AppCompatActivity {
 
                     Intent resultIntent = new Intent(RateActivity.this, List_Activity.class);
                     resultIntent.putExtra("RestaurantExtra", toy);
-
-                    startActivity(resultIntent);
                     toy.setClean(cleanliness.getRating());
                     toy.setAmbiance(ambiance.getRating());
                     toy.setFanciness(fanciness.getRating());
                     toy.setFlavour(flvr.getRating());
                     toy.setStaff(staff.getRating());
+                    //call startActivity after we set the ratings
+                    startActivity(resultIntent);
+
                 }
             });
 
