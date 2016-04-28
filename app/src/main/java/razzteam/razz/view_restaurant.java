@@ -2,16 +2,11 @@ package razzteam.razz;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.TextView;
-
-import java.util.ArrayList;
 
 public class view_restaurant extends AppCompatActivity {
 
@@ -42,7 +37,23 @@ public class view_restaurant extends AppCompatActivity {
         TextView DescriptionTxt = (TextView) findViewById(R.id.rest_type_text);
         DescriptionTxt.setText(restaurant.getDescription());
 
+        RatingBar cBar = (RatingBar) findViewById(R.id.clean_bar);
+        cBar.setNumStars(5);
+        cBar.setRating(3);
 
+        RatingBar aBar = (RatingBar) findViewById(R.id.ambianceBar);
+        aBar.setNumStars(5);
+        aBar.setRating(5);
+
+        RatingBar flBar = (RatingBar) findViewById(R.id.flavourBar);
+        flBar.setNumStars(5);
+        flBar.setRating(2);
+        RatingBar fBar = (RatingBar) findViewById(R.id.fancyBar);
+        fBar.setNumStars(5);
+        fBar.setRating(4);
+        RatingBar sBar = (RatingBar) findViewById(R.id.staffBar);
+        sBar.setNumStars(5);
+        sBar.setRating(4);
 
     }
 

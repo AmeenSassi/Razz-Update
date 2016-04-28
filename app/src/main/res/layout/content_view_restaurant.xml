@@ -23,7 +23,7 @@
 
         android:text="Restaurant_name"
         android:typeface="serif"
-        android:textSize="40dp"
+        android:textSize="35dp"
         android:fontFamily="serif"
         android:textStyle="bold"
         android:textColor="@color/rest_title_color"
@@ -76,40 +76,6 @@
         android:layout_alignLeft="@+id/Restaurant_name"
         android:layout_alignStart="@+id/Restaurant_name" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-
-
-        android:text="@string/active_rest_phone_number"
-        android:textColor="@color/regular_text_color"
-        android:textStyle="bold"
-
-
-
-        android:id="@+id/phone_number_text"
-        android:padding="5dp"
-        android:layout_below="@+id/Address_text"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/listView"
-
-
-
-        android:scrollbars="vertical"
-
-
-
-        android:layout_below="@+id/phone_number_text"
-        android:layout_alignLeft="@+id/phone_number_text"
-        android:layout_alignStart="@+id/phone_number_text"
-        android:layout_above="@+id/backButton" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -128,6 +94,95 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:padding="20dp" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:id="@+id/clean_bar"
+
+
+        android:layout_below="@+id/Address_text"
+        android:layout_toRightOf="@+id/backButton"
+        android:layout_toEndOf="@+id/backButton" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ambianceBar"
+        android:layout_below="@+id/clean_bar"
+        android:layout_alignLeft="@+id/clean_bar"
+        android:layout_alignStart="@+id/clean_bar" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fancyBar"
+        android:layout_below="@+id/ambianceBar"
+        android:layout_alignLeft="@+id/ambianceBar"
+        android:layout_alignStart="@+id/ambianceBar" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/flavourBar"
+        android:layout_below="@+id/fancyBar"
+        android:layout_toRightOf="@+id/backButton"
+        android:layout_toEndOf="@+id/backButton" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/staffBar"
+        android:layout_below="@+id/flavourBar"
+        android:layout_toRightOf="@+id/backButton"
+        android:layout_toEndOf="@+id/backButton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cleanliness"
+        android:id="@+id/clenaText"
+        android:layout_alignTop="@+id/clean_bar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ambiance"
+        android:id="@+id/ambianceText"
+        android:layout_below="@+id/clean_bar"
+        android:layout_alignRight="@+id/clenaText"
+        android:layout_alignEnd="@+id/clenaText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fanciness"
+        android:id="@+id/fancyText"
+        android:layout_alignTop="@+id/fancyBar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Flavour"
+        android:id="@+id/flavourText"
+        android:layout_below="@+id/fancyBar"
+        android:layout_alignRight="@+id/fancyText"
+        android:layout_alignEnd="@+id/fancyText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Staff"
+        android:id="@+id/staffText"
+        android:layout_alignTop="@+id/staffBar"
+        android:layout_alignRight="@+id/flavourText"
+        android:layout_alignEnd="@+id/flavourText" />
 
 </RelativeLayout>
 
