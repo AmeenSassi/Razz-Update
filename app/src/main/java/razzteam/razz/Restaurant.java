@@ -2,10 +2,9 @@ package razzteam.razz;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.widget.RatingBar;
-
+//import android.widget.RatingBar;
 import java.util.ArrayList;
-import java.util.Random;
+//import java.util.Random;
 
 /**
  * Created by Ameen on 4/5/2016.
@@ -18,8 +17,20 @@ public class Restaurant implements Parcelable {
 
     private String description;
     private int numOfReviews;
-    private ArrayList<RateReviews> ratingList = new ArrayList<RateReviews>();
+    private float[] clean = new float[100];
+    private int cleanUsed = 0;
+    private float[] ambiance = new float[100];
+    private int ambianceUsed = 0;
+    private float[] flavour = new float[100];
+    private int flavourUsed = 0;
+    private float[] fancy = new float[100];
+    private int fancyUsed = 0;
+    private float[] staff = new float[100];
+    private int staffUsed = 0;
 
+    private float average;
+    //private RateReviews review = new RateReviews();
+    //private ArrayList<RateReviews> ratingList = new ArrayList<RateReviews>();
 
     Restaurant(){
 
@@ -31,8 +42,16 @@ public class Restaurant implements Parcelable {
         this.address = in.readString();
         this.description = in.readString();
         this.numOfReviews = in.readInt();
-        this.ratingList = new ArrayList<RateReviews>();
-        // in.readTypedList(ratingList, RateReviews.CREATOR);
+        this.clean = new float[100];
+        in.readFloatArray(clean);
+        this.ambiance = new float[100];
+        in.readFloatArray(ambiance);
+        this.flavour = new float[100];
+        in.readFloatArray(flavour);
+        this.fancy = new float[100];
+        in.readFloatArray(fancy);
+        this.staff = new float[100];
+        in.readFloatArray(staff);
     }
 
     @Override
@@ -42,7 +61,12 @@ public class Restaurant implements Parcelable {
         dest.writeString(address);
         dest.writeString(description);
         dest.writeInt(numOfReviews);
-        dest.writeTypedList(ratingList);
+        dest.writeFloatArray(clean);
+        dest.writeFloatArray(ambiance);
+        dest.writeFloatArray(flavour);
+        dest.writeFloatArray(fancy);
+        dest.writeFloatArray(staff);
+
     }
 
     @Override
@@ -63,13 +87,14 @@ public class Restaurant implements Parcelable {
         }
     };
 
-    public ArrayList<RateReviews> getRatingList() {
+    /*public ArrayList<RateReviews> getRatingList() {
         return ratingList;
     }
 
     public void setRatingList(ArrayList<RateReviews> ratingList) {
         this.ratingList = ratingList;
     }
+    */
 
     Restaurant(String name, String type, String address, String description) {
         this.name = name;
@@ -107,119 +132,134 @@ public class Restaurant implements Parcelable {
     }
 
 
-    public void setClean(float num) {
-        int i = ratingList.size();
-        ratingList.get(i).setClean(num);
+    public void setClean(Float num) {
+        int i = cleanUsed;
+        clean[i] = num;
+        cleanUsed++;
     }
 
     public void setAmbiance(float num) {
-        int i = ratingList.size();
-        ratingList.get(i).setAmbiance(num);
+        int i = ambianceUsed;
+        ambiance[i] = num;
+        ambianceUsed++;
     }
 
     public void setFanciness(float num) {
-        int i = ratingList.size();
-        ratingList.get(i).setFanciness(num);
+        int i = fancyUsed;
+        fancy[i] = num;
+        fancyUsed++;
     }
 
     public void setFlavour(float num) {
-        int i = ratingList.size();
-        ratingList.get(i).setFlavour(num);
+        int i = flavourUsed;
+        flavour[i] = num;
+        flavourUsed++;
     }
 
     public void setStaff(float num) {
-        int i = ratingList.size();
-        ratingList.get(i).setStaff(num);
+        int i = staffUsed;
+        staff[i] = num;
+        staffUsed++;
     }
 
 
 
     public float getClean(int i) {
-        return ratingList.get(i).getClean();
+        return clean[i];
     }
 
     public float getAmbiance(int i) {
-        return ratingList.get(i).getAmbiance();
+        return ambiance[i];
     }
 
     public float getFanciness(int i) {
-        return ratingList.get(i).getFanciness();
+        return fancy[i];
     }
 
     public float getFlavour(int i) {
-        return ratingList.get(i).getFlavour();
+        return flavour[i];
     }
 
     public float getStaff(int i) {
-        return ratingList.get(i).getStaff();
+        return staff[i];
     }
 
     public float ambianceAVG(){
         float average = 0;
-        for(int i = 0; i < ratingList.size(); i++)
+        for(int i = 0; i <= ambianceUsed; i++)
         {
-            average += ratingList.get(i).getAmbiance();
+            average += ambiance[i];
         }
-        average = average/(ratingList.size());
+        average = average/(ambianceUsed);
 
         return average;
     }
 
     public float cleanAVG(){
         float average = 0;
-        for(int i = 0; i < ratingList.size(); i++)
+        for(int i = 0; i <= cleanUsed; i++)
         {
-            average += ratingList.get(i).getClean();
+            average += clean[i];
         }
-        average = average/(ratingList.size());
+        average = average/(cleanUsed);
 
         return average;
     }
 
     public float fancyAVG(){
         float average = 0;
-        for(int i = 0; i < ratingList.size(); i++)
+        for(int i = 0; i <= fancyUsed; i++)
         {
-            average += ratingList.get(i).getFanciness();
+            average += fancy[i];
         }
-        average = average/(ratingList.size());
+        average = average/(fancyUsed);
 
         return average;
     }
 
     public float flavorAVG(){
         float average = 0;
-        for(int i = 0; i < ratingList.size(); i++)
+        for(int i = 0; i <= flavourUsed; i++)
         {
-            average += ratingList.get(i).getFlavour();
+            average += flavour[i];
         }
-        average = average/(ratingList.size());
+        average = average/(flavourUsed);
 
         return average;
     }
 
     public float staffAVG(){
         float average = 0;
-        for(int i = 0; i < ratingList.size(); i++)
+        for(int i = 0; i <= staffUsed; i++)
         {
-            average += ratingList.get(i).getStaff();
+            average += staff[i];
         }
-        average = average/(ratingList.size());
+        average = average/(staffUsed);
 
         return average;
     }
 
     public float getAverage(){
-        float cleanAVG = this.cleanAVG();
-        float ambianceAVG = this.ambianceAVG();
-        float fancyAVG = this.fancyAVG();
-        float flavorAVG = this.flavorAVG();
-        float staffAVG = this.staffAVG();
 
-        float average = cleanAVG + ambianceAVG + fancyAVG + flavorAVG + staffAVG;
+//        float cleanAVG = this.cleanAVG();
+//        float ambianceAVG = this.ambianceAVG();
+//        float fancyAVG = this.fancyAVG();
+//        float flavorAVG = this.flavorAVG();
+//        float staffAVG = this.staffAVG();
+
+        float cleanAVG = this.getClean(0);
+        float ambianceAVG = this.getAmbiance(0);
+        float fancyAVG = this.getFanciness(0);
+        float flavorAVG = this.getFlavour(0);
+        float staffAVG = this.getStaff(0);
+
+        average = cleanAVG + ambianceAVG + fancyAVG + flavorAVG + staffAVG;
         average = average/5;
 
         return average;
+    }
+
+    public void setAverage(){
 
     }
 

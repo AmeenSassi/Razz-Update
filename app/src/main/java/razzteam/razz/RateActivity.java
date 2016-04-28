@@ -68,13 +68,14 @@ public class RateActivity extends AppCompatActivity {
 
                     Intent resultIntent = new Intent(RateActivity.this, List_Activity.class);
                     resultIntent.putExtra("RestaurantExtra", toy);
-
+                    toy.setClean(cleanliness.getRating());
+                    toy.setAmbiance(ambiance.getRating());
+                    toy.setFanciness(fanciness.getRating());
+                    toy.setFlavour(flvr.getRating());
+                    toy.setStaff(staff.getRating());
+                    //call startActivity after we set the ratings
                     startActivity(resultIntent);
-//                    toy.setClean(cleanliness.getRating());
-//                    toy.setAmbiance(ambiance.getRating());
-//                    toy.setFanciness(fanciness.getRating());
-//                    toy.setFlavour(flvr.getRating());
-//                    toy.setStaff(staff.getRating());
+
                 }
             });
 
@@ -85,12 +86,13 @@ public class RateActivity extends AppCompatActivity {
     {
 
 //        //I think this is all the necessary fields to set
-//        toy.setStaff(staff.getRating());
-//        toy.setClean(cleanliness.getRating());
-//        toy.setAmbiance(ambiance.getRating());
-//        toy.setFanciness(fanciness.getRating());
-//        toy.setFlavour(flvr.getRating());
-//        toy.setStaff(staff.getRating());
+        toy.setStaff(staff.getRating());
+        toy.setClean(cleanliness.getRating());
+        toy.setAmbiance(ambiance.getRating());
+        toy.setFanciness(fanciness.getRating());
+        toy.setFlavour(flvr.getRating());
+        toy.setStaff(staff.getRating());
+        toy.setAverage();
 //
 //
         Intent resultIntent = new Intent(RateActivity.this, List_Activity.class);
