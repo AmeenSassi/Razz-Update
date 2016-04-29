@@ -26,14 +26,6 @@ public class RateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rate);
 
-
-//            String restName = restData.getString("newRestName");
-//            String restType = restData.getString("newRestType");
-//            String restAddress = restData.getString("newRestAddress");
-//            String restDescription = restData.getString("newRestDescription");
-//            int restAverage = restData.getInt("newRestAverage");
-
-
             //  NEED TO RECEIVE PARCELABLE HERE
 
             toy = new Restaurant();
@@ -67,12 +59,12 @@ public class RateActivity extends AppCompatActivity {
                 public void onClick(View v) {
 
                     Intent resultIntent = new Intent(RateActivity.this, List_Activity.class);
-                    resultIntent.putExtra("RestaurantExtra", toy);
                     toy.setClean(cleanliness.getRating());
                     toy.setAmbiance(ambiance.getRating());
                     toy.setFanciness(fanciness.getRating());
                     toy.setFlavour(flvr.getRating());
                     toy.setStaff(staff.getRating());
+                    resultIntent.putExtra("RestaurantExtra", toy);
                     //call startActivity after we set the ratings
                     startActivity(resultIntent);
 

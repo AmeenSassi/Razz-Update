@@ -4,8 +4,10 @@ import android.app.ListActivity;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
@@ -16,25 +18,24 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class List_Activity extends AppCompatActivity  {
 
+    public static List<Restaurant> myNewRestaurants = new ArrayList<Restaurant>();
     public static List<Restaurant> myRestaurants = new ArrayList<Restaurant>();
     int index = 0;
     ListView list;
-    boolean FirstCreate = true;
+    boolean FirstTime = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-
-        //populateRestaurantList();
-        //populateListView();
-
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -45,14 +46,18 @@ public class List_Activity extends AppCompatActivity  {
             }
         });
 
-        Restaurant nRest = new Restaurant();
+        myRestaurants.clear();
+        populateRestaurantList();
+
+        Restaurant nRest;
         Bundle extras = getIntent().getExtras();
         if(extras != null){
             nRest = extras.getParcelable("RestaurantExtra");
-            myRestaurants.add(nRest);
+            myNewRestaurants.add(nRest);
         }
-        populateListView();
 
+        myRestaurants.addAll(myNewRestaurants);
+        populateListView();
     }
 
     @Override
@@ -76,87 +81,86 @@ public class List_Activity extends AppCompatActivity  {
 
 
     public void populateRestaurantList() {
-        myRestaurants.add(new Restaurant("Taco Bell", "Mexican", "Dever, CO", "Cheap Mexican fast food"));
-        //--------------------------------------------------
-        myRestaurants.get(0).setClean((float)5);
-        myRestaurants.get(0).setAmbiance((float)3);
-        myRestaurants.get(0).setFanciness((float)4);
-        myRestaurants.get(0).setFlavour((float)2);
-        myRestaurants.get(0).setStaff((float) 5);
-        //---------------------------------------------------
-        myRestaurants.add(new Restaurant("Froyo", "Dessert", "Aurora, CO", "Frozen yogurt with fun toppings"));
-        //--------------------------------------------------
-        myRestaurants.get(1).setClean((float) 5);
-        myRestaurants.get(1).setAmbiance((float) 5);
-        myRestaurants.get(1).setFanciness((float) 4);
-        myRestaurants.get(1).setFlavour((float) 1);
-        myRestaurants.get(1).setStaff((float) 3);
-        //---------------------------------------------------
-        myRestaurants.add(new Restaurant("Stubens", "Diner", "Arvada, CO", "Revamped diner"));
-        //--------------------------------------------------
-        myRestaurants.get(2).setClean((float) 5);
-        myRestaurants.get(2).setAmbiance((float) 4);
-        myRestaurants.get(2).setFanciness((float) 1);
-        myRestaurants.get(2).setFlavour((float) 2);
-        myRestaurants.get(2).setStaff((float) 5);
-        //---------------------------------------------------
-        myRestaurants.add(new Restaurant("3 Margaritas", "Mexican", "Golden, CO", "Sit-down Mexican food"));
-        //--------------------------------------------------
-        myRestaurants.get(3).setClean((float) 3);
-        myRestaurants.get(3).setAmbiance((float) 3);
-        myRestaurants.get(3).setFanciness((float) 3);
-        myRestaurants.get(3).setFlavour((float) 3);
-        myRestaurants.get(3).setStaff((float) 3);
-        //---------------------------------------------------
-        myRestaurants.add(new Restaurant("Jimmy John's", "Sandwhich", "Castle Pines, CO", "Easy sandwich shop"));
-        //--------------------------------------------------
-        myRestaurants.get(4).setClean((float) 4);
-        myRestaurants.get(4).setAmbiance((float) 4);
-        myRestaurants.get(4).setFanciness((float) 3);
-        myRestaurants.get(4).setFlavour((float) 1);
-        myRestaurants.get(4).setStaff((float) 2);
-        //---------------------------------------------------
-        myRestaurants.add(new Restaurant("Olive Garden", "Sit-down", "Dever, CO", "Family dining"));
-        //--------------------------------------------------
-        myRestaurants.get(5).setClean((float) 5);
-        myRestaurants.get(5).setAmbiance((float) 5);
-        myRestaurants.get(5).setFanciness((float) 5);
-        myRestaurants.get(5).setFlavour((float) 5);
-        myRestaurants.get(5).setStaff((float) 5);
-        //---------------------------------------------------
-        myRestaurants.add(new Restaurant("Fuzzy's", "Tex Mex", "Dever, CO", "Tex Mex with a lot of booze"));
-        //--------------------------------------------------
-        myRestaurants.get(6).setClean((float) 4);
-        myRestaurants.get(6).setAmbiance((float) 4);
-        myRestaurants.get(6).setFanciness((float) 4);
-        myRestaurants.get(6).setFlavour((float) 4);
-        myRestaurants.get(6).setStaff((float) 4);
-        //---------------------------------------------------
-        myRestaurants.add(new Restaurant("Mcdonalds", "Fast food", "Denver, CO", "Burgers and fast food"));
-        //--------------------------------------------------
-        myRestaurants.get(7).setClean((float) 3);
-        myRestaurants.get(7).setAmbiance((float) 3);
-        myRestaurants.get(7).setFanciness((float) 3);
-        myRestaurants.get(7).setFlavour((float) 3);
-        myRestaurants.get(7).setStaff((float) 3);
-        //---------------------------------------------------
-        myRestaurants.add(new Restaurant("Pizza Hut", "Pizza", "Dever, CO", "Pizza and salad bar"));
-        //--------------------------------------------------
-        myRestaurants.get(8).setClean((float) 2);
-        myRestaurants.get(8).setAmbiance((float) 2);
-        myRestaurants.get(8).setFanciness((float) 2);
-        myRestaurants.get(8).setFlavour((float) 2);
-        myRestaurants.get(8).setStaff((float) 2);
-        //---------------------------------------------------
-        myRestaurants.add(new Restaurant("Starbucks", "CoffeeShop", "Dever, CO", "Gormet coffee at expensive prices"));
-        //--------------------------------------------------
-        myRestaurants.get(9).setClean((float)1);
-        myRestaurants.get(9).setAmbiance((float)1);
-        myRestaurants.get(9).setFanciness((float)1);
-        myRestaurants.get(9).setFlavour((float)1);
-        myRestaurants.get(9).setStaff((float)1);
-        //---------------------------------------------------
 
+        Restaurant tempRes = new Restaurant("Taco Bell", "Mexican", "Denver, CO", "Cheap Mexican fast food");
+        tempRes.setClean((float) 2);
+        tempRes.setAmbiance((float) 1);
+        tempRes.setFanciness((float) 1);
+        tempRes.setFlavour((float) 2);
+        tempRes.setStaff((float) 1);
+        myRestaurants.add(tempRes);
+
+        tempRes = new Restaurant("Froyo", "Dessert", "Aurora, CO", "Frozen yogurt with fun toppings");
+        tempRes.setClean((float) 4);
+        tempRes.setAmbiance((float) 3);
+        tempRes.setFanciness((float) 1);
+        tempRes.setFlavour((float) 3);
+        tempRes.setStaff((float) 2);
+        myRestaurants.add(tempRes);
+
+        tempRes = new Restaurant("Stubens", "Diner", "Arvada, CO", "Revamped diner");
+        tempRes.setClean((float) 3);
+        tempRes.setAmbiance((float) 4);
+        tempRes.setFanciness((float) 1);
+        tempRes.setFlavour((float) 2);
+        tempRes.setStaff((float) 1);
+        myRestaurants.add(tempRes);
+
+        tempRes = new Restaurant("3 Margaritas", "Mexican", "Golden, CO", "Sit-down Mexican food");
+        tempRes.setClean((float) 3);
+        tempRes.setAmbiance((float) 4);
+        tempRes.setFanciness((float) 1);
+        tempRes.setFlavour((float) 2);
+        tempRes.setStaff((float) 1);
+        myRestaurants.add(tempRes);
+
+        tempRes = new Restaurant("Jimmy John's", "Sandwhich", "Castle Pines, CO", "Easy $$ sandwhich shop");
+        tempRes.setClean((float) 3);
+        tempRes.setAmbiance((float) 4);
+        tempRes.setFanciness((float) 1);
+        tempRes.setFlavour((float) 2);
+        tempRes.setStaff((float) 1);
+        myRestaurants.add(tempRes);
+
+        tempRes = new Restaurant("Olive Garden", "Sit-down", "Dever, CO", "Family dining with bar");
+        tempRes.setClean((float) 3);
+        tempRes.setAmbiance((float) 4);
+        tempRes.setFanciness((float) 1);
+        tempRes.setFlavour((float) 2);
+        tempRes.setStaff((float) 1);
+        myRestaurants.add(tempRes);
+
+        tempRes = new Restaurant("Fuzzy's", "Tex Mex", "Dever, CO", "Tex Mex with a lot of booze");
+        tempRes.setClean((float) 3);
+        tempRes.setAmbiance((float) 4);
+        tempRes.setFanciness((float) 1);
+        tempRes.setFlavour((float) 2);
+        tempRes.setStaff((float) 1);
+        myRestaurants.add(tempRes);
+
+        tempRes = new Restaurant("Mcdonalds", "Fast food", "Denver, CO", "Burgers and fast food");
+        tempRes.setClean((float) 3);
+        tempRes.setAmbiance((float) 4);
+        tempRes.setFanciness((float) 1);
+        tempRes.setFlavour((float) 2);
+        tempRes.setStaff((float) 1);
+        myRestaurants.add(tempRes);
+
+        tempRes = new Restaurant("Pizza Hut", "Pizza", "Dever, CO", "Pizza and salad bar");
+        tempRes.setClean((float) 3);
+        tempRes.setAmbiance((float) 4);
+        tempRes.setFanciness((float) 1);
+        tempRes.setFlavour((float) 2);
+        tempRes.setStaff((float) 1);
+        myRestaurants.add(tempRes);
+
+        tempRes = new Restaurant("Starbucks", "CoffeeShop", "Dever, CO", "Gormet coffee at expensive prices");
+        tempRes.setClean((float) 3);
+        tempRes.setAmbiance((float) 4);
+        tempRes.setFanciness((float) 1);
+        tempRes.setFlavour((float) 2);
+        tempRes.setStaff((float) 1);
+        myRestaurants.add(tempRes);
 
     }
 

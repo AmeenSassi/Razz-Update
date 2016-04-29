@@ -14,7 +14,6 @@ public class Restaurant implements Parcelable {
     private String name;
     private String type;
     private String address;
-
     private String description;
     private int numOfReviews;
     private float[] clean = new float[100];
