@@ -47,7 +47,7 @@ public class view_restaurant extends AppCompatActivity {
 
         RatingBar flBar = (RatingBar) findViewById(R.id.flavourBar);
         flBar.setNumStars(5);
-        flBar.setRating(2);
+        flBar.setRating(4);
         RatingBar fBar = (RatingBar) findViewById(R.id.fancyBar);
         fBar.setNumStars(5);
         fBar.setRating(4);
