@@ -82,15 +82,7 @@ public class List_Activity extends AppCompatActivity  {
 
     public void populateRestaurantList() {
 
-        Restaurant tempRes = new Restaurant("Taco Bell", "Mexican", "Denver, CO", "Cheap Mexican fast food");
-        tempRes.setClean((float) 2);
-        tempRes.setAmbiance((float) 1);
-        tempRes.setFanciness((float) 1);
-        tempRes.setFlavour((float) 2);
-        tempRes.setStaff((float) 1);
-        myRestaurants.add(tempRes);
-
-        tempRes = new Restaurant("Froyo", "Dessert", "Aurora, CO", "Frozen yogurt with fun toppings");
+        Restaurant tempRes = new Restaurant("Froyo", "Dessert", "Aurora, CO", "Frozen yogurt with fun toppings");
         tempRes.setClean((float) 4);
         tempRes.setAmbiance((float) 3);
         tempRes.setFanciness((float) 1);
@@ -98,49 +90,57 @@ public class List_Activity extends AppCompatActivity  {
         tempRes.setStaff((float) 2);
         myRestaurants.add(tempRes);
 
-        tempRes = new Restaurant("Stubens", "Diner", "Arvada, CO", "Revamped diner");
-        tempRes.setClean((float) 3);
-        tempRes.setAmbiance((float) 4);
+        tempRes = new Restaurant("Taco Bell", "Mexican", "Denver, CO", "Cheap Mexican fast food");
+        tempRes.setClean((float) 2);
+        tempRes.setAmbiance((float) 1);
         tempRes.setFanciness((float) 1);
         tempRes.setFlavour((float) 2);
         tempRes.setStaff((float) 1);
         myRestaurants.add(tempRes);
 
-        tempRes = new Restaurant("3 Margaritas", "Mexican", "Golden, CO", "Sit-down Mexican food");
-        tempRes.setClean((float) 3);
+        tempRes = new Restaurant("Stubens", "Diner", "Arvada, CO", "Revamped diner");
+        tempRes.setClean((float) 4);
         tempRes.setAmbiance((float) 4);
-        tempRes.setFanciness((float) 1);
-        tempRes.setFlavour((float) 2);
-        tempRes.setStaff((float) 1);
+        tempRes.setFanciness((float) 3);
+        tempRes.setFlavour((float) 4);
+        tempRes.setStaff((float) 5);
         myRestaurants.add(tempRes);
 
         tempRes = new Restaurant("Jimmy John's", "Sandwhich", "Castle Pines, CO", "Easy $$ sandwhich shop");
-        tempRes.setClean((float) 3);
-        tempRes.setAmbiance((float) 4);
-        tempRes.setFanciness((float) 1);
-        tempRes.setFlavour((float) 2);
+        tempRes.setClean((float) 4);
+        tempRes.setAmbiance((float) 2);
+        tempRes.setFanciness((float) 2);
+        tempRes.setFlavour((float) 3);
         tempRes.setStaff((float) 1);
         myRestaurants.add(tempRes);
 
         tempRes = new Restaurant("Olive Garden", "Sit-down", "Dever, CO", "Family dining with bar");
-        tempRes.setClean((float) 3);
+        tempRes.setClean((float) 5);
         tempRes.setAmbiance((float) 4);
-        tempRes.setFanciness((float) 1);
-        tempRes.setFlavour((float) 2);
-        tempRes.setStaff((float) 1);
+        tempRes.setFanciness((float) 4);
+        tempRes.setFlavour((float) 4);
+        tempRes.setStaff((float) 3);
+        myRestaurants.add(tempRes);
+
+        tempRes = new Restaurant("3 Margaritas", "Mexican", "Golden, CO", "Sit-down Mexican food");
+        tempRes.setClean((float) 2);
+        tempRes.setAmbiance((float) 2);
+        tempRes.setFanciness((float) 3);
+        tempRes.setFlavour((float) 3);
+        tempRes.setStaff((float) 4);
         myRestaurants.add(tempRes);
 
         tempRes = new Restaurant("Fuzzy's", "Tex Mex", "Dever, CO", "Tex Mex with a lot of booze");
-        tempRes.setClean((float) 3);
-        tempRes.setAmbiance((float) 4);
-        tempRes.setFanciness((float) 1);
-        tempRes.setFlavour((float) 2);
-        tempRes.setStaff((float) 1);
+        tempRes.setClean((float) 4);
+        tempRes.setAmbiance((float) 3);
+        tempRes.setFanciness((float) 2);
+        tempRes.setFlavour((float) 3);
+        tempRes.setStaff((float) 4);
         myRestaurants.add(tempRes);
 
         tempRes = new Restaurant("Mcdonalds", "Fast food", "Denver, CO", "Burgers and fast food");
-        tempRes.setClean((float) 3);
-        tempRes.setAmbiance((float) 4);
+        tempRes.setClean((float) 2);
+        tempRes.setAmbiance((float) 1);
         tempRes.setFanciness((float) 1);
         tempRes.setFlavour((float) 2);
         tempRes.setStaff((float) 1);
@@ -148,18 +148,18 @@ public class List_Activity extends AppCompatActivity  {
 
         tempRes = new Restaurant("Pizza Hut", "Pizza", "Dever, CO", "Pizza and salad bar");
         tempRes.setClean((float) 3);
-        tempRes.setAmbiance((float) 4);
-        tempRes.setFanciness((float) 1);
-        tempRes.setFlavour((float) 2);
-        tempRes.setStaff((float) 1);
+        tempRes.setAmbiance((float) 2);
+        tempRes.setFanciness((float) 2);
+        tempRes.setFlavour((float) 3);
+        tempRes.setStaff((float) 2);
         myRestaurants.add(tempRes);
 
         tempRes = new Restaurant("Starbucks", "CoffeeShop", "Dever, CO", "Gormet coffee at expensive prices");
-        tempRes.setClean((float) 3);
+        tempRes.setClean((float) 5);
         tempRes.setAmbiance((float) 4);
-        tempRes.setFanciness((float) 1);
-        tempRes.setFlavour((float) 2);
-        tempRes.setStaff((float) 1);
+        tempRes.setFanciness((float) 2);
+        tempRes.setFlavour((float) 4);
+        tempRes.setStaff((float) 4);
         myRestaurants.add(tempRes);
 
     }
