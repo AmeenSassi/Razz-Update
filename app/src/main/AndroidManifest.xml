@@ -15,15 +15,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".RateActivity">
-
-            <!-- I commented this out so that Razz activity wouldn't start first si I could debug view_restaurant -->
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
+
         <activity
             android:name=".List_Activity"
             android:label="Razz"
@@ -33,35 +26,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".view_restaurant"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-
-            <!-- This intent-filter is here so I can start my activity first to debug it -->
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
+
         <activity
             android:name=".Add_Restaurant"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
-        <activity
-            android:name=".List_2_Activity"
-            android:label="@string/title_activity_list_2_"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+
     </application>
 
 </manifest>

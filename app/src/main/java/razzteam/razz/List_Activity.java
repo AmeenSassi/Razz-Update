@@ -37,8 +37,8 @@ public class List_Activity extends AppCompatActivity  {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton fabs = (FloatingActionButton) findViewById(R.id.fab);
+        fabs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final Intent intent = new Intent(List_Activity.this, Add_Restaurant.class);
@@ -46,9 +46,11 @@ public class List_Activity extends AppCompatActivity  {
             }
         });
 
+        //so myRestaurants doesn't have duplicates
         myRestaurants.clear();
         populateRestaurantList();
 
+        //adding the new restaurant that was created in prior activities
         Restaurant nRest;
         Bundle extras = getIntent().getExtras();
         if(extras != null){
@@ -57,9 +59,14 @@ public class List_Activity extends AppCompatActivity  {
         }
 
         myRestaurants.addAll(myNewRestaurants);
+
+        //since the list doesn't show up the last item in myRestaurants, no apparent reason why
+        Restaurant tempRes = new Restaurant("FAKE RESTAURANT", "n/a", "n/a", "n/a");
+        myRestaurants.add(tempRes);
+
         populateListView();
     }
-
+/*
     @Override
     protected void onPause(){
         super.onPause();
@@ -77,7 +84,7 @@ public class List_Activity extends AppCompatActivity  {
                 list.setSelectionFromTop(0,0);
             }
         }
-    }
+    }*/
 
 
     public void populateRestaurantList() {

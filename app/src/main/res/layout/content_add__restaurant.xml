@@ -72,7 +72,7 @@
             android:id="@+id/editText_rest_address"
 
 
-            android:hint="Address"
+            android:hint="City, State"
             android:padding="18sp"
             android:focusable="true" />
 
