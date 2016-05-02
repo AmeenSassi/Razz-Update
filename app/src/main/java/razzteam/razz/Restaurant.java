@@ -185,6 +185,10 @@ public class Restaurant implements Parcelable {
 
     public float ambianceAVG(){
         float average = 0;
+        if(ambianceUsed == 0)
+        {
+            return 0;
+        }
         for(int i = 0; i <= ambianceUsed; i++)
         {
             average += ambiance[i];
@@ -196,6 +200,10 @@ public class Restaurant implements Parcelable {
 
     public float cleanAVG(){
         float average = 0;
+        if(cleanUsed == 0)
+        {
+            return 0;
+        }
         for(int i = 0; i <= cleanUsed; i++)
         {
             average += clean[i];
@@ -207,6 +215,10 @@ public class Restaurant implements Parcelable {
 
     public float fancyAVG(){
         float average = 0;
+        if(fancyUsed == 0)
+        {
+            return 0;
+        }
         for(int i = 0; i <= fancyUsed; i++)
         {
             average += fancy[i];
@@ -218,6 +230,10 @@ public class Restaurant implements Parcelable {
 
     public float flavorAVG(){
         float average = 0;
+        if(flavourUsed == 0)
+        {
+            return 0;
+        }
         for(int i = 0; i <= flavourUsed; i++)
         {
             average += flavour[i];
@@ -229,6 +245,10 @@ public class Restaurant implements Parcelable {
 
     public float staffAVG(){
         float average = 0;
+        if(staffUsed == 0)
+        {
+            return 0;
+        }
         for(int i = 0; i <= staffUsed; i++)
         {
             average += staff[i];

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,94 +12,98 @@
     tools:context="razzteam.razz.Add_Restaurant"
     tools:showIn="@layout/activity_add_restaurant">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_margin="8sp"
-        android:id="@+id/linearLayout">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-
-
-            android:text="@string/add_rest_page_title"
-            android:id="@+id/add_rest_label"
-            android:typeface="serif"
-            android:textSize="36sp"
-            android:fontFamily="serif"
-            android:textStyle="bold"
-            android:textColor="@color/rest_title_color"
-            android:clickable="false"
-
-
-            android:layout_gravity="center_horizontal" />
-
-        <EditText
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText_rest_name"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="8sp"
+            android:id="@+id/linearLayout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
 
 
-            android:inputType="textImeMultiLine"
-            android:hint="Restaurant Name"
-            android:focusableInTouchMode="true"
-            android:padding="18sp"
-            android:focusable="true" />
+                android:text="@string/add_rest_page_title"
+                android:id="@+id/add_rest_label"
+                android:typeface="serif"
+                android:textSize="36sp"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:textColor="@color/rest_title_color"
+                android:clickable="false"
+
+
+                android:layout_gravity="center_horizontal" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText_rest_name"
+
+
+                android:inputType="textImeMultiLine"
+                android:hint="Restaurant Name"
+                android:focusableInTouchMode="true"
+                android:padding="18sp"
+                android:focusable="true" />
 
 
 
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/editText_rest_type"
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/editText_rest_type"
 
-            android:inputType="textImeMultiLine"
-            android:hint="Restaurant Type"
-            android:padding="18sp"
-            android:focusable="true" />
+                android:inputType="textImeMultiLine"
+                android:hint="Restaurant Type"
+                android:padding="18sp"
+                android:focusable="true" />
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textImeMultiLine"
-            android:ems="10"
-            android:id="@+id/editText_rest_address"
-
-
-            android:hint="City, State"
-            android:padding="18sp"
-            android:focusable="true" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textImeMultiLine"
+                android:ems="10"
+                android:id="@+id/editText_rest_address"
 
 
-            android:id="@+id/editText_rest_description"
-            android:hint="Description"
-            android:focusable="true"
-            android:inputType="textImeMultiLine"
+                android:hint="City, State"
+                android:padding="18sp"
+                android:focusable="true" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
 
-            android:layout_gravity="center_horizontal"
-            android:padding="18sp" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/add_rest_add_and_rate_button_text"
-            android:id="@+id/button_add_and_rate"
-            android:layout_gravity="right"
-            android:padding="25dp"
-            android:onClick="button_to_rate_screen"/>
+                android:id="@+id/editText_rest_description"
+                android:hint="Description"
+                android:focusable="true"
+                android:inputType="textImeMultiLine"
 
 
-    </LinearLayout>
+                android:layout_gravity="center_horizontal"
+                android:padding="18sp" />
 
-</RelativeLayout>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_rest_add_and_rate_button_text"
+                android:id="@+id/button_add_and_rate"
+                android:layout_gravity="right"
+                android:padding="25dp"
+                android:onClick="button_to_rate_screen"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

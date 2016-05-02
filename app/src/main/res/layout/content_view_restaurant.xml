@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,179 +12,180 @@
     tools:context="razzteam.razz.view_restaurant"
     tools:showIn="@layout/activity_view_restaurant">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+
+
+            android:text="Restaurant_name"
+            android:typeface="serif"
+            android:textSize="35dp"
+            android:fontFamily="serif"
+            android:textStyle="bold"
+            android:textColor="@color/rest_title_color"
+            android:clickable="false"
+
+
+            android:id="@+id/Restaurant_name"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:elegantTextHeight="false"
+            android:padding="6dp"
+
+            android:textIsSelectable="false" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+
+
+            android:text="@string/active_rest_address"
+            android:textColor="@color/regular_text_color"
+            android:textStyle="bold"
+
+
+            android:id="@+id/Address_text"
+            android:typeface="serif"
+            android:padding="5dp"
+            android:layout_below="@+id/rest_type_text"
+            android:layout_alignLeft="@+id/rest_type_text"
+            android:layout_alignStart="@+id/rest_type_text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
 
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-
-
-        android:text="Restaurant_name"
-        android:typeface="serif"
-        android:textSize="35dp"
-        android:fontFamily="serif"
-        android:textStyle="bold"
-        android:textColor="@color/rest_title_color"
-        android:clickable="false"
-
-
-        android:id="@+id/Restaurant_name"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:elegantTextHeight="false"
-        android:padding="6dp"
-
-        android:textIsSelectable="false" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-
-
-        android:text="@string/active_rest_address"
-        android:textColor="@color/regular_text_color"
-        android:textStyle="bold"
-
-
-        android:id="@+id/Address_text"
-        android:typeface="serif"
-        android:padding="5dp"
-        android:layout_below="@+id/rest_type_text"
-        android:layout_alignLeft="@+id/rest_type_text"
-        android:layout_alignStart="@+id/rest_type_text" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="@string/active_rest_type"
+            android:textColor="@color/regular_text_color"
+            android:textStyle="bold"
 
 
 
-        android:text="@string/active_rest_type"
-        android:textColor="@color/regular_text_color"
-        android:textStyle="bold"
+            android:id="@+id/rest_type_text"
+            android:padding="5dp"
+            android:layout_below="@+id/Restaurant_name"
+            android:layout_alignLeft="@+id/Restaurant_name"
+            android:layout_alignStart="@+id/Restaurant_name" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
 
 
-        android:id="@+id/rest_type_text"
-        android:padding="5dp"
-        android:layout_below="@+id/Restaurant_name"
-        android:layout_alignLeft="@+id/Restaurant_name"
-        android:layout_alignStart="@+id/Restaurant_name" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+            android:text="Back"
+            android:clickable="true"
+            android:onClick="tyler"
 
 
 
-        android:text="Back"
-        android:clickable="true"
-        android:onClick="tyler"
+            android:id="@+id/backButton"
+            android:padding="20dp"
+            android:layout_below="@+id/staffBar"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/clean_bar"
+            android:layout_below="@+id/clenaText"
+            android:layout_centerHorizontal="true"
+            android:isIndicator="true" />
 
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ambianceBar"
+            android:layout_below="@+id/ambianceText"
+            android:layout_alignLeft="@+id/clean_bar"
+            android:layout_alignStart="@+id/clean_bar"
+            android:isIndicator="true" />
 
-        android:id="@+id/backButton"
-        android:layout_marginBottom="48dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:padding="20dp" />
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fancyBar"
+            android:layout_below="@+id/fancyText"
+            android:layout_alignLeft="@+id/ambianceBar"
+            android:layout_alignStart="@+id/ambianceBar"
+            android:isIndicator="true" />
 
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/flavourBar"
+            android:layout_below="@+id/flavourText"
+            android:layout_alignLeft="@+id/fancyBar"
+            android:layout_alignStart="@+id/fancyBar"
+            android:isIndicator="true" />
 
+        <RatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/staffBar"
+            android:layout_below="@+id/staffText"
+            android:layout_alignLeft="@+id/flavourBar"
+            android:layout_alignStart="@+id/flavourBar"
+            android:isIndicator="true" />
 
-        android:id="@+id/clean_bar"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cleanliness"
+            android:id="@+id/clenaText"
+            android:layout_below="@+id/Address_text"
+            android:layout_alignRight="@+id/ambianceText"
+            android:layout_alignEnd="@+id/ambianceText"
+            android:layout_marginTop="17dp" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ambiance"
+            android:id="@+id/ambianceText"
+            android:layout_below="@+id/clean_bar"
+            android:layout_centerHorizontal="true" />
 
-        android:layout_below="@+id/Address_text"
-        android:layout_toRightOf="@+id/backButton"
-        android:layout_toEndOf="@+id/backButton" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fanciness"
+            android:id="@+id/fancyText"
+            android:layout_below="@+id/ambianceBar"
+            android:layout_alignLeft="@+id/flavourText"
+            android:layout_alignStart="@+id/flavourText" />
 
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ambianceBar"
-        android:layout_below="@+id/clean_bar"
-        android:layout_alignLeft="@+id/clean_bar"
-        android:layout_alignStart="@+id/clean_bar" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Flavour"
+            android:id="@+id/flavourText"
+            android:layout_below="@+id/fancyBar"
+            android:layout_centerHorizontal="true" />
 
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/fancyBar"
-        android:layout_below="@+id/ambianceBar"
-        android:layout_alignLeft="@+id/ambianceBar"
-        android:layout_alignStart="@+id/ambianceBar" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Staff"
+            android:id="@+id/staffText"
+            android:layout_below="@+id/flavourBar"
+            android:layout_centerHorizontal="true" />
 
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/flavourBar"
-        android:layout_below="@+id/fancyBar"
-        android:layout_toRightOf="@+id/backButton"
-        android:layout_toEndOf="@+id/backButton" />
+    </RelativeLayout>
 
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/staffBar"
-        android:layout_below="@+id/flavourBar"
-        android:layout_toRightOf="@+id/backButton"
-        android:layout_toEndOf="@+id/backButton" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="cleanliness"
-        android:id="@+id/clenaText"
-        android:layout_alignTop="@+id/clean_bar"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ambiance"
-        android:id="@+id/ambianceText"
-        android:layout_below="@+id/clean_bar"
-        android:layout_alignRight="@+id/clenaText"
-        android:layout_alignEnd="@+id/clenaText" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fanciness"
-        android:id="@+id/fancyText"
-        android:layout_alignTop="@+id/fancyBar"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Flavour"
-        android:id="@+id/flavourText"
-        android:layout_below="@+id/fancyBar"
-        android:layout_alignRight="@+id/fancyText"
-        android:layout_alignEnd="@+id/fancyText" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Staff"
-        android:id="@+id/staffText"
-        android:layout_alignTop="@+id/staffBar"
-        android:layout_alignRight="@+id/flavourText"
-        android:layout_alignEnd="@+id/flavourText" />
-
-</RelativeLayout>
+</ScrollView>
 
 
 
