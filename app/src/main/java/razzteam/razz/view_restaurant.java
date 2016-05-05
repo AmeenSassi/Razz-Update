@@ -21,6 +21,7 @@ public class view_restaurant extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //We retrieve an object in an intent here
         Restaurant restaurant = new Restaurant();
         Bundle extras = getIntent().getExtras();
         if(extras != null){
@@ -28,6 +29,7 @@ public class view_restaurant extends AppCompatActivity {
         }
 
 
+        //setting the text fields here so the information displayed is correct
         TextView NameTxt = (TextView) findViewById(R.id.Restaurant_name);
         NameTxt.setText(restaurant.getName());
 
@@ -38,30 +40,25 @@ public class view_restaurant extends AppCompatActivity {
         DescriptionTxt.setText(restaurant.getDescription());
 
         RatingBar cBar = (RatingBar) findViewById(R.id.clean_bar);
-        //cBar.setNumStars(5);
         cBar.setRating(restaurant.getClean(0));
 
         RatingBar aBar = (RatingBar) findViewById(R.id.ambianceBar);
-        //aBar.setNumStars(5);
         aBar.setRating(restaurant.getAmbiance(0));
 
         RatingBar flBar = (RatingBar) findViewById(R.id.flavourBar);
-        //flBar.setNumStars(5);
         flBar.setRating(restaurant.getFlavour(0));
 
         RatingBar fBar = (RatingBar) findViewById(R.id.fancyBar);
-        //fBar.setNumStars(5);
         fBar.setRating(restaurant.getFanciness(0));
 
         RatingBar sBar = (RatingBar) findViewById(R.id.staffBar);
-        //sBar.setNumStars(5);
         sBar.setRating(restaurant.getStaff(0));
 
     }
 
 
-
-    public void tyler(View view)
+    //goes back to list screen from the view screen
+    public void backButton_view(View view)
     {
         Intent startNewActivity = new Intent(this, List_Activity.class);
         startActivity(startNewActivity);

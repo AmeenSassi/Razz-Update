@@ -65,11 +65,9 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
 
 
-
             android:text="@string/active_rest_type"
             android:textColor="@color/regular_text_color"
             android:textStyle="bold"
-
 
 
             android:id="@+id/rest_type_text"
@@ -83,11 +81,9 @@
             android:layout_height="wrap_content"
 
 
-
             android:text="Back"
             android:clickable="true"
-            android:onClick="tyler"
-
+            android:onClick="backButton_view"
 
 
             android:id="@+id/backButton"

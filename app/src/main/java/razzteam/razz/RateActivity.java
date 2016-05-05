@@ -26,25 +26,19 @@ public class RateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rate);
 
-            //  NEED TO RECEIVE PARCELABLE HERE
-
+            //receiving parcelable and storing it in 'toy'
             toy = new Restaurant();
             Bundle extras = getIntent().getExtras();
             if(extras != null){
                 Restaurant nRest = extras.getParcelable("RestaurantExtra");
-                //would like to call set setters and getters here to properly copy values into the "toy" object, but can't yet
+                //setting proper information in a local restaurant object. Info is received from the object passed through the intent
                 toy.setName(nRest.getName());
                 toy.setType(nRest.getType());
                 toy.setAddress(nRest.getAddress());
                 toy.setDescription(nRest.getDescription());
-
-
             }
 
-
-
-
-
+            //getting more info
             name = (TextView) findViewById(R.id.Restaurant_Name);
             cleanliness = (RatingBar) findViewById(R.id.cleanRatingBar);
             ambiance = (RatingBar) findViewById(R.id.ambRatingBar);
@@ -58,6 +52,7 @@ public class RateActivity extends AppCompatActivity {
             rate.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
 
+                    //creating new intent, setting rating values based on
                     Intent resultIntent = new Intent(RateActivity.this, List_Activity.class);
                     toy.setClean(cleanliness.getRating());
                     toy.setAmbiance(ambiance.getRating());
@@ -86,7 +81,7 @@ public class RateActivity extends AppCompatActivity {
         toy.setStaff(staff.getRating());
         toy.setAverage();
 //
-//
+        //sending new Restaurant object to list
         Intent resultIntent = new Intent(RateActivity.this, List_Activity.class);
         resultIntent.putExtra("RestaurantExtra", toy);
 

@@ -11,6 +11,7 @@ import java.util.ArrayList;
  */
 public class Restaurant implements Parcelable {
 
+    //private data members of Restaurant class
     private String name;
     private String type;
     private String address;
@@ -28,13 +29,11 @@ public class Restaurant implements Parcelable {
     private int staffUsed = 0;
 
     private float average;
-    //private RateReviews review = new RateReviews();
-    //private ArrayList<RateReviews> ratingList = new ArrayList<RateReviews>();
 
     Restaurant(){
 
     };
-
+    //This is part of the implementation of parcelable that allows us to pass object in intents
     public Restaurant(Parcel in){
         this.name = in.readString();
         this.type = in.readString();
@@ -53,6 +52,7 @@ public class Restaurant implements Parcelable {
         in.readFloatArray(staff);
     }
 
+    //This is part of the implementation of parcelable that allows us to pass object in intents
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
@@ -68,11 +68,14 @@ public class Restaurant implements Parcelable {
 
     }
 
+    //This is part of the implementation of parcelable that allows us to pass object in intents
     @Override
     public int describeContents() {
         return 0;
     }
 
+
+    //This is part of the implementation of parcelable that allows us to pass object in intents
     public static final Parcelable.Creator<Restaurant> CREATOR = new Parcelable.Creator<Restaurant>() {
 
         @Override
@@ -86,15 +89,7 @@ public class Restaurant implements Parcelable {
         }
     };
 
-    /*public ArrayList<RateReviews> getRatingList() {
-        return ratingList;
-    }
-
-    public void setRatingList(ArrayList<RateReviews> ratingList) {
-        this.ratingList = ratingList;
-    }
-    */
-
+    //constructor
     Restaurant(String name, String type, String address, String description) {
         this.name = name;
         this.type = type;
@@ -102,6 +97,7 @@ public class Restaurant implements Parcelable {
         this.description = description;
     }
 
+    //setters
     public void setName(String n){
         name = n;
     }
@@ -162,7 +158,7 @@ public class Restaurant implements Parcelable {
     }
 
 
-
+    //getters
     public float getClean(int i) {
         return clean[i];
     }
@@ -183,6 +179,7 @@ public class Restaurant implements Parcelable {
         return staff[i];
     }
 
+    //average computation
     public float ambianceAVG(){
         float average = 0;
         if(ambianceUsed == 0)
@@ -258,6 +255,7 @@ public class Restaurant implements Parcelable {
         return average;
     }
 
+    //this is where we calculate the overall average
     public float getAverage(){
 
 //        float cleanAVG = this.cleanAVG();

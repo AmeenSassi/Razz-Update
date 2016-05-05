@@ -48,9 +48,10 @@ public class List_Activity extends AppCompatActivity  {
 
         //so myRestaurants doesn't have duplicates
         myRestaurants.clear();
+        //populating restaurant list so functionality can be clearly seen
         populateRestaurantList();
 
-        //adding the new restaurant that was created in prior activities
+        //adding the new restaurant that was created in prior activities (if there are any)
         Restaurant nRest;
         Bundle extras = getIntent().getExtras();
         if(extras != null){
@@ -60,32 +61,10 @@ public class List_Activity extends AppCompatActivity  {
 
         myRestaurants.addAll(myNewRestaurants);
 
-        //since the list doesn't show up the last item in myRestaurants, no apparent reason why
-        Restaurant tempRes = new Restaurant("FAKE RESTAURANT", "n/a", "n/a", "n/a");
+        Restaurant tempRes = new Restaurant("RESTAURANT", "n/a", "n/a", "n/a");
         myRestaurants.add(tempRes);
-
         populateListView();
     }
-/*
-    @Override
-    protected void onPause(){
-        super.onPause();
-        index = list.getFirstVisiblePosition();
-    }
-
-    @Override
-    public void onResume(){
-        super.onResume();
-        if(list != null){
-            if(list.getCount() > index){
-                list.setSelectionFromTop(index, 0);
-            }
-            else{
-                list.setSelectionFromTop(0,0);
-            }
-        }
-    }*/
-
 
     public void populateRestaurantList() {
 
@@ -113,7 +92,7 @@ public class List_Activity extends AppCompatActivity  {
         tempRes.setStaff((float) 5);
         myRestaurants.add(tempRes);
 
-        tempRes = new Restaurant("Jimmy John's", "Sandwhich", "Castle Pines, CO", "Easy $$ sandwhich shop");
+        tempRes = new Restaurant("Jimmy John's", "Sandwich", "Castle Pines, CO", "Easy $$ sandwhich shop");
         tempRes.setClean((float) 4);
         tempRes.setAmbiance((float) 2);
         tempRes.setFanciness((float) 2);
@@ -171,7 +150,7 @@ public class List_Activity extends AppCompatActivity  {
 
     }
 
-
+    //rendering the list
     private void populateListView(){
         ArrayAdapter<Restaurant> adapter = new MyListAdapter();
         list = (ListView) findViewById(R.id.restaurantListView);

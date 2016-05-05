@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.content.Intent;
 
 public class Add_Restaurant extends AppCompatActivity {
-    private String rest_name = "test";
+    //private String rest_name = "test";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,20 +24,20 @@ public class Add_Restaurant extends AppCompatActivity {
 
     }
 
+    //This function gets called when the "Add and rate!" button is pressed
     public void button_to_rate_screen(View view)
     {
-//        TextView toChange = (TextView) findViewById(R.id.add_rest_label);
-//        toChange.setText(rest_name);
-
+        //retrieving new restaurant information from text field
         EditText rName = (EditText) findViewById(R.id.editText_rest_name);
         EditText rType = (EditText) findViewById(R.id.editText_rest_type);
         EditText rAdd = (EditText) findViewById(R.id.editText_rest_address);
         EditText rDescription = (EditText) findViewById(R.id.editText_rest_description);
-        //don't have a getter for average here because there is no average before thins is rated
+        //don't have a getter for average here because there is no average before things is rated
 
+        //creating new restaurant with the information form the text fields
         Restaurant nRest = new Restaurant(rName.getText().toString(), rType.getText().toString(), rAdd.getText().toString(), rDescription.getText().toString());
 
-        //NEED TO SEND PARCELABLE HERE
+        //sending object to Rate screen via this intent.
         Intent resultIntent = new Intent(Add_Restaurant.this, RateActivity.class);
         resultIntent.putExtra("RestaurantExtra", nRest);
 
